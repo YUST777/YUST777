@@ -155,22 +155,22 @@ class YUST:
 <tr>
 <td width="50%">
 
-#### 🔥 Core Projects
+#### 🔥 Core TON Blockchain Projects
 
 - 🔗 **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - Collectible management toolkit on TON Blockchain (TypeScript)
-- 📊 **[GiftsChart](https://github.com/YUST777/giftschart4)** - Gift charting and analytics system (Python)
-- 📦 **[GiftCatalog](https://github.com/YUST777/GiftCatalog.Py)** - Comprehensive gift catalog management (Python)
-- 🎨 **[CanvasStory](https://github.com/YUST777/)** - Canvas-based storytelling platform
+- 📊 **[GiftsChart 4](https://github.com/YUST777/giftschart4)** - Advanced gift charting and analytics system (Python)
+- 📦 **[GiftCatalog](https://github.com/YUST777/GiftCatalog.Py)** - Comprehensive gift catalog management system (Python)
+- 💎 **[PXHolder V2](https://github.com/YUST777/PX_Holder_V2)** - Pixel holder and management system on TON
 
 </td>
 <td width="50%">
 
 #### 🛠️ Additional Projects
 
-- 💎 **[PXHolder](https://github.com/YUST777/PX_Holder_V2)** - Pixel holder and management system
-- 😊 **[SmilelyTools](https://github.com/YUST777/)** - Utility tools collection
-- 📈 **[GiftsChart 3.9](https://github.com/YUST777/giftschart3.9)** - Advanced gift charting system
-- 📊 **[GiftsChart 3.8.1](https://github.com/YUST777/giftschart3.8.1)** - Gift charting and catalog system
+- 📈 **[GiftsChart 3.9](https://github.com/YUST777/giftschart3.9)** - Gift charting system v3.9 (Python)
+- 📊 **[GiftsChart 3.8.1](https://github.com/YUST777/giftschart3.8.1)** - Gift charting and catalog system (Python)
+- 📋 **[GiftCatalog 1.3](https://github.com/YUST777/GiftCatalog1.3-test)** - Gift catalog testing version
+- 📋 **[GiftCatalog 1.2](https://github.com/YUST777/GiftCatalog1.2)** - Gift catalog version 1.2
 
 </td>
 </tr>
