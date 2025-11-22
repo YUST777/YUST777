@@ -25,28 +25,37 @@ class YUST:
     def __init__(self):
         self.name = "YUST"
         self.username = "YUST777"
-        self.role = "Full Stack Developer"
+        self.role = "Blockchain Developer & Full Stack Developer"
         self.location = "🌍 Earth"
+        self.specialization = "TON Blockchain Development"
         
     def skills(self):
         return {
+            "blockchain": ["TON Blockchain", "Smart Contracts", "Web3"],
             "languages": ["Python", "TypeScript", "JavaScript", "HTML", "CSS"],
             "frameworks": ["Node.js", "React", "Express"],
-            "tools": ["Git", "GitHub", "VS Code", "Linux"],
-            "interests": ["Web Development", "UI/UX Design", "Data Visualization"]
+            "expertise": ["Web Scraping", "Database Management", "Data Processing"],
+            "tools": ["Git", "GitHub", "VS Code", "Linux"]
         }
     
-    def projects(self):
+    def blockchain_projects(self):
         return {
-            "total": 32,
-            "status": "Active Development",
-            "focus": "Building innovative solutions"
+            "platform": "TON Blockchain",
+            "total_projects": 6,
+            "status": "Active Development"
         }
     
     def code(self):
         while True:
-            return "🚀 Building something awesome!"
+            return "🚀 Building innovative blockchain solutions on TON!"
 ```
+
+### 🎯 Specializations
+
+- 🔗 **Blockchain Developer** - Built 6 projects on TON Blockchain
+- 🕷️ **Web Scraper** - Expert in data extraction and web scraping
+- 🗄️ **Database Manager** - Skilled in database design and management
+- 💻 **Full Stack Developer** - Building end-to-end solutions
 
 ---
 
@@ -61,8 +70,15 @@ class YUST:
 ### 🛠️ Tools & Platforms
 <img src="https://skillicons.dev/icons?i=git,github,vscode,linux" />
 
-### 📊 Additional Skills
-<img src="https://skillicons.dev/icons?i=bash,docker,postgresql,mongodb" />
+### 🔗 Blockchain & Web3
+<img src="https://skillicons.dev/icons?i=postgresql,mongodb" />
+![TON](https://img.shields.io/badge/TON-0088CC?style=for-the-badge&logo=ton&logoColor=white)
+![Blockchain](https://img.shields.io/badge/Blockchain-121D33?style=for-the-badge&logo=blockchaindotcom&logoColor=white)
+![Web3](https://img.shields.io/badge/Web3-F16822?style=for-the-badge&logo=web3dotjs&logoColor=white)
+
+### 📊 Database & Data Tools
+<img src="https://skillicons.dev/icons?i=postgresql,mongodb" />
+![Scraping](https://img.shields.io/badge/Web%20Scraping-FF6B6B?style=for-the-badge&logo=python&logoColor=white)
 
 ---
 
@@ -127,7 +143,40 @@ class YUST:
 
 ## 🎯 Featured Projects
 
-### 🔥 Top Projects
+### 🔗 TON Blockchain Projects (6 Projects)
+
+<div align="center">
+  
+  **Building innovative solutions on The Open Network (TON) Blockchain**
+  
+</div>
+
+<table>
+<tr>
+<td width="50%">
+
+#### 🔥 Core Projects
+
+- 🔗 **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - Collectible management toolkit on TON Blockchain (TypeScript)
+- 📊 **[GiftsChart](https://github.com/YUST777/giftschart4)** - Gift charting and analytics system (Python)
+- 📦 **[GiftCatalog](https://github.com/YUST777/GiftCatalog.Py)** - Comprehensive gift catalog management (Python)
+- 🎨 **[CanvasStory](https://github.com/YUST777/)** - Canvas-based storytelling platform
+
+</td>
+<td width="50%">
+
+#### 🛠️ Additional Projects
+
+- 💎 **[PXHolder](https://github.com/YUST777/PX_Holder_V2)** - Pixel holder and management system
+- 😊 **[SmilelyTools](https://github.com/YUST777/)** - Utility tools collection
+- 📈 **[GiftsChart 3.9](https://github.com/YUST777/giftschart3.9)** - Advanced gift charting system
+- 📊 **[GiftsChart 3.8.1](https://github.com/YUST777/giftschart3.8.1)** - Gift charting and catalog system
+
+</td>
+</tr>
+</table>
+
+### 💻 Other Notable Projects
 
 <table>
 <tr>
@@ -135,7 +184,6 @@ class YUST:
 
 #### 🎨 TypeScript Projects
 - **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system interface
-- **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - Collectible management toolkit
 - **[hue-test-](https://github.com/YUST777/hue-test-)** - Color and hue testing application
 - **[snap](https://github.com/YUST777/snap)** - Quick snapshots and captures tool
 - **[brainfuel](https://github.com/YUST777/brainfuel)** - Brain training and mental exercises
@@ -143,32 +191,11 @@ class YUST:
 </td>
 <td width="50%">
 
-#### 🐍 Python Projects
-- **[giftschart4](https://github.com/YUST777/giftschart4)** - Latest gift charting system
-- **[giftschart3.9](https://github.com/YUST777/giftschart3.9)** - Gift catalog and charting tool
-- **[giftschart3.8.1](https://github.com/YUST777/giftschart3.8.1)** - Gift charting and catalog system
-- **[YTTG](https://github.com/YUST777/YTTG)** - YouTube-related tool or game
-- **[here](https://github.com/YUST777/here)** - Location-based application
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
 #### 🌐 JavaScript Projects
 - **[ICPCHUELIME2](https://github.com/YUST777/ICPCHUELIME2)** - Advanced color interface
 - **[ICPCHUELIME](https://github.com/YUST777/ICPCHUELIME)** - Color interface implementation
 - **[ICPCHUE](https://github.com/YUST777/ICPCHUE)** - Color hue management system
 - **[panocool](https://github.com/YUST777/panocool)** - Panoramic view application
-
-</td>
-<td width="50%">
-
-#### 🎮 Web Projects
-- **[ZeroThratecool](https://github.com/YUST777/ZeroThratecool)** - Cool web interface
-- **[3outof6heheheeh](https://github.com/YUST777/3outof6heheheeh)** - Interactive web game
-- **[balls](https://github.com/YUST777/balls)** - HTML-based interactive project
-- **[isitcopmelete-](https://github.com/YUST777/isitcopmelete-)** - Completion checker tool
 
 </td>
 </tr>
@@ -186,9 +213,9 @@ class YUST:
 
 <div align="center">
   
-  **32+ Repositories** • **Active Developer** • **Multiple Languages**
+  **32+ Repositories** • **6 TON Blockchain Projects** • **Active Developer**
   
-  *Building innovative projects across Python, TypeScript, JavaScript, and Web Technologies*
+  *Building innovative blockchain solutions on TON, web scraping tools, and database management systems*
   
 </div>
 
