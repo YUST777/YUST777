@@ -91,15 +91,15 @@ class YUST:
 
 <div align="center">
   
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=YUST777&theme=tokyonight" alt="Repos Per Language" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=YUST777&theme=tokyonight" alt="Most Commit Language" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=YUST777&theme=tokyonight" alt="Stats" />
   
 </div>
 
 <div align="center">
   
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=YUST777&theme=tokyonight" alt="Stats" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=YUST777&theme=tokyonight&utcOffset=8" alt="Productive Time" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/commits-per-year?username=YUST777&theme=tokyonight" alt="Commits Per Year" />
   
 </div>
 
@@ -192,14 +192,6 @@ class YUST:
   
 </div>
 
-### 📦 Repository Statistics
-
-<div align="center">
-  
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=YUST777&theme=tokyonight" alt="Repos Per Language" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/commits-per-year?username=YUST777&theme=tokyonight" alt="Commits Per Year" />
-  
-</div>
 
 ---
 
