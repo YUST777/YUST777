@@ -83,14 +83,15 @@ class YUST:
 <img src="https://skillicons.dev/icons?i=git,github,vscode,linux" />
 
 ### 🔗 Blockchain & Web3
-<img src="https://skillicons.dev/icons?i=postgresql,mongodb" />
 ![TON](https://img.shields.io/badge/TON-0088CC?style=for-the-badge&logo=ton&logoColor=white)
-![Blockchain](https://img.shields.io/badge/Blockchain-121D33?style=for-the-badge&logo=blockchaindotcom&logoColor=white)
-![Web3](https://img.shields.io/badge/Web3-F16822?style=for-the-badge&logo=web3dotjs&logoColor=white)
+![Blockchain](https://img.shields.io/badge/Blockchain-121D33?style=for-the-badge&logo=bitcoin&logoColor=white)
+![Web3](https://img.shields.io/badge/Web3-F16822?style=for-the-badge&logo=ethereum&logoColor=white)
+![Smart Contracts](https://img.shields.io/badge/Smart%20Contracts-000000?style=for-the-badge&logo=solidity&logoColor=white)
 
 ### 📊 Database & Data Tools
 <img src="https://skillicons.dev/icons?i=postgresql,mongodb" />
-![Scraping](https://img.shields.io/badge/Web%20Scraping-FF6B6B?style=for-the-badge&logo=python&logoColor=white)
+![Web Scraping](https://img.shields.io/badge/Web%20Scraping-FF6B6B?style=for-the-badge&logo=python&logoColor=white)
+![Data Processing](https://img.shields.io/badge/Data%20Processing-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 ---
 
