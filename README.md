@@ -90,8 +90,8 @@ class YUST:
 
 ### 📊 Database & Data Tools
 <img src="https://skillicons.dev/icons?i=postgresql,mongodb" />
-![Web Scraping](https://img.shields.io/badge/Web%20Scraping-FF6B6B?style=for-the-badge&labelColor=FF6B6B&color=white)
-![Data Processing](https://img.shields.io/badge/Data%20Processing-3776AB?style=for-the-badge&labelColor=3776AB&color=white)
+<img src="https://img.shields.io/badge/Web%20Scraping-FF6B6B?style=for-the-badge&logoColor=white" alt="Web Scraping" />
+<img src="https://img.shields.io/badge/Data%20Processing-3776AB?style=for-the-badge&logoColor=white" alt="Data Processing" />
 
 ---
 
