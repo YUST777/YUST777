@@ -53,9 +53,21 @@ class YUST:
 ### 🎯 Specializations
 
 - 🔗 **Blockchain Developer** - Built 6 projects on TON Blockchain
-- 🕷️ **Web Scraper** - Expert in data extraction and web scraping
-- 🗄️ **Database Manager** - Skilled in database design and management
-- 💻 **Full Stack Developer** - Building end-to-end solutions
+- 🕷️ **Web Scraper** - Expert in data extraction, web scraping, and automation
+- 🗄️ **Database Manager** - Skilled in database design, optimization, and management
+- 💻 **Full Stack Developer** - Building end-to-end solutions from frontend to blockchain
+
+### 💼 Key Expertise Areas
+
+<div align="center">
+  
+  | **Blockchain** | **Data Management** | **Web Development** |
+  |:---:|:---:|:---:|
+  | TON Blockchain | Web Scraping | Full Stack |
+  | Smart Contracts | Database Design | API Development |
+  | Web3 Integration | Data Processing | UI/UX Design |
+  
+</div>
 
 ---
 
@@ -171,6 +183,7 @@ class YUST:
 - 📊 **[GiftsChart 3.8.1](https://github.com/YUST777/giftschart3.8.1)** - Gift charting and catalog system (Python)
 - 📋 **[GiftCatalog 1.3](https://github.com/YUST777/GiftCatalog1.3-test)** - Gift catalog testing version
 - 📋 **[GiftCatalog 1.2](https://github.com/YUST777/GiftCatalog1.2)** - Gift catalog version 1.2
+- 💰 **[Project Gift Price](https://github.com/YUST777/Project-Gift-Price)** - Gift pricing and analysis tool
 
 </td>
 </tr>
