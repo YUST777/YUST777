@@ -83,10 +83,10 @@ class YUST:
 <img src="https://skillicons.dev/icons?i=git,github,vscode,linux" />
 
 ### 🔗 Blockchain & Web3
-![TON](https://img.shields.io/badge/TON-0088CC?style=for-the-badge&label=TON&color=0088CC&labelColor=000000)
-![Blockchain](https://img.shields.io/badge/Blockchain-121D33?style=for-the-badge&label=Blockchain&color=121D33&labelColor=000000)
-![Web3](https://img.shields.io/badge/Web3-F16822?style=for-the-badge&label=Web3&color=F16822&labelColor=000000)
-![Smart Contracts](https://img.shields.io/badge/Smart%20Contracts-000000?style=for-the-badge&label=Smart%20Contracts&color=000000&labelColor=FFFFFF)
+![TON](https://img.shields.io/badge/TON-0088CC?style=for-the-badge)
+![Blockchain](https://img.shields.io/badge/Blockchain-121D33?style=for-the-badge&color=121D33)
+![Web3](https://img.shields.io/badge/Web3-F16822?style=for-the-badge&color=F16822)
+![Smart Contracts](https://img.shields.io/badge/Smart%20Contracts-000000?style=for-the-badge&color=000000)
 
 ### 📊 Database & Data Tools
 <img src="https://skillicons.dev/icons?i=postgresql,mongodb" />
