@@ -108,18 +108,6 @@ class Developer:
 
 ## 🎯 Featured Projects
 
-### 🔥 Public Projects
-
-<div align="center">
-  
-  **[giftschart3.8.1](https://github.com/YUST777/giftschart3.8.1)** - *Python-based gift charting and catalog system*
-  
-  **[snap](https://github.com/YUST777/snap)** - *TypeScript application for quick snapshots and captures*
-  
-  **[brainfuel](https://github.com/YUST777/brainfuel)** - *TypeScript project for brain training and mental exercises*
-  
-</div>
-
 ### 💡 Recent Development
 
 #### TypeScript Projects
@@ -141,9 +129,15 @@ class Developer:
 - ✅ **[isitcopmelete-](https://github.com/YUST777/isitcopmelete-)** - Completion checker tool (Private)
 
 #### Web Projects
-- 🌐 **[ZeroThratecool](https://github.com/YUST777/ZeroThratecool)** - Cool web interface project
-- 🎮 **[3outof6heheheeh](https://github.com/YUST777/3outof6heheheeh)** - Interactive web game or application
+- 🌐 **[ZeroThratecool](https://github.com/YUST777/ZeroThratecool)** - Cool web interface project (Private)
+- 🎮 **[3outof6heheheeh](https://github.com/YUST777/3outof6heheheeh)** - Interactive web game or application (Private)
 - 🎨 **[balls](https://github.com/YUST777/balls)** - HTML-based interactive project (Private)
+
+#### Additional Projects
+- 📊 **[giftschart3.8.1](https://github.com/YUST777/giftschart3.8.1)** - Python-based gift charting and catalog system (Private)
+- 📸 **[snap](https://github.com/YUST777/snap)** - TypeScript application for quick snapshots and captures (Private)
+- 🧠 **[brainfuel](https://github.com/YUST777/brainfuel)** - TypeScript project for brain training and mental exercises (Private)
+- 🛡️ **[Zerothreat-](https://github.com/YUST777/Zerothreat-)** - Security or threat management tool (Private)
 
 <br/>
 
