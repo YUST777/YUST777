@@ -1,0 +1,40 @@
+name: Generate Snake Animation
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Runs daily at midnight UTC
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: Platane/snk@master
+        id: snake-gif
+        with:
+          github_user_name: YUST777
+          svg_out_path: dist/github-contribution-grid-snake.svg
+          
+      - name: Push to output branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          destination_dir: output
+          
+      - uses: actions/checkout@v3
+        with:
+          ref: output
+          path: output
+          
+      - name: Update README
+        run: |
+          cd output
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Update snake animation" || exit 0
+          git push
+
