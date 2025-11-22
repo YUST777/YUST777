@@ -24,13 +24,20 @@ class Developer:
         self.name = "YUST"
         self.username = "YUST777"
         self.location = "Earth 🌍"
-        self.passion = "Building cool projects"
-        self.current_learning = ["New Technologies", "Best Practices"]
-        self.hobbies = ["Coding", "Learning", "Creating"]
+        self.passion = "Building innovative projects"
+        self.skills = {
+            "languages": ["Python", "TypeScript", "JavaScript", "HTML", "CSS"],
+            "interests": ["Web Development", "Data Visualization", "UI/UX Design"],
+            "projects": 32  # And counting! 🚀
+        }
+        self.current_focus = "Creating cool applications and tools"
     
     def code(self):
         while True:
             return "Building something awesome! 🚀"
+    
+    def create_project(self, idea):
+        return f"Turning {idea} into reality! 💡"
 ```
 
 <br/>
@@ -39,28 +46,34 @@ class Developer:
 
 ### Languages & Frameworks
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
-### Databases & Cloud
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/postgresql-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+### Tools & Technologies
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS%20Code-0078d4.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 ### Tools & Others
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS%20Code-0078d4.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
+<br/>
+
+## 📦 Project Statistics
+
+<div align="center">
+  
+  **32+ Repositories** | **Active Developer** | **Multiple Languages**
+  
+  *Building projects across Python, TypeScript, JavaScript, and Web Technologies*
+  
+</div>
 
 <br/>
 
@@ -95,25 +108,42 @@ class Developer:
 
 ## 🎯 Featured Projects
 
-### 🔥 Top Projects
+### 🔥 Public Projects
 
-<!-- Replace these with your actual project names and descriptions -->
 <div align="center">
   
-  **Project 1** - *Brief description of your awesome project*
+  **[giftschart3.8.1](https://github.com/YUST777/giftschart3.8.1)** - *Python-based gift charting and catalog system*
   
-  **Project 2** - *Brief description of another cool project*
+  **[snap](https://github.com/YUST777/snap)** - *TypeScript application for quick snapshots and captures*
   
-  **Project 3** - *Brief description of your third project*
+  **[brainfuel](https://github.com/YUST777/brainfuel)** - *TypeScript project for brain training and mental exercises*
   
 </div>
 
-### 💡 Recent Projects
+### 💡 Recent Development
 
-<!-- Add your recent projects here -->
-- 🚀 **Project Name 1** - Description of what it does
-- 🎨 **Project Name 2** - Description of what it does
-- 🔧 **Project Name 3** - Description of what it does
+#### TypeScript Projects
+- 🎨 **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system interface (Private)
+- 🧩 **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - Collectible management toolkit (Private)
+- 🎨 **[hue-test-](https://github.com/YUST777/hue-test-)** - Color and hue testing application (Private)
+
+#### JavaScript Projects
+- 🌈 **[ICPCHUELIME2](https://github.com/YUST777/ICPCHUELIME2)** - Advanced color interface project (Private)
+- 🎨 **[ICPCHUELIME](https://github.com/YUST777/ICPCHUELIME)** - Color interface implementation (Private)
+- 🌈 **[ICPCHUE](https://github.com/YUST777/ICPCHUE)** - Color hue management system (Private)
+- 🎪 **[panocool](https://github.com/YUST777/panocool)** - Panoramic view application (Private)
+
+#### Python Projects
+- 📊 **[giftschart4](https://github.com/YUST777/giftschart4)** - Latest version of gift charting system (Private)
+- 📈 **[giftschart3.9](https://github.com/YUST777/giftschart3.9)** - Gift catalog and charting tool (Private)
+- 🎯 **[YTTG](https://github.com/YUST777/YTTG)** - YouTube-related tool or game (Private)
+- 📍 **[here](https://github.com/YUST777/here)** - Location-based Python application (Private)
+- ✅ **[isitcopmelete-](https://github.com/YUST777/isitcopmelete-)** - Completion checker tool (Private)
+
+#### Web Projects
+- 🌐 **[ZeroThratecool](https://github.com/YUST777/ZeroThratecool)** - Cool web interface project
+- 🎮 **[3outof6heheheeh](https://github.com/YUST777/3outof6heheheeh)** - Interactive web game or application
+- 🎨 **[balls](https://github.com/YUST777/balls)** - HTML-based interactive project (Private)
 
 <br/>
 
