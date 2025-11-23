@@ -1,7 +1,7 @@
 <!-- 🦆 Quack! You found a duck! 🦆 -->
 <div align="center">
   
-  ![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hey+There!+👋;+I'm+YUST!+🚀;+TON+Blockchain+Developer;+6%2B+TON+projects;+Vibe+Coder+🦆;)
+  ![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Roboto&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hey+There!+👋;+I'm+YUST!+🚀;+TON+Blockchain+Developer;+6%2B+TON+projects;+Vibe+Coder+🦆;)
   
 </div>
 
@@ -41,8 +41,6 @@ Building innovative blockchain solutions on The Open Network (TON) Blockchain. S
 <div align="center">
   
   <img src="https://skillicons.dev/icons?i=python,typescript,javascript,html,css,nodejs,react,git,github,vscode,linux,postgresql,mongodb" />
-  <br>
-  <img src="https://img.shields.io/badge/Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white" alt="Cursor" />
   
 </div>
 
