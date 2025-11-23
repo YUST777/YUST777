@@ -229,50 +229,6 @@ class YUST:
 
 ---
 
-## 🎮 Snake Game Contribution
-
-<div align="center">
-  
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/YUST777/YUST777/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/YUST777/YUST777/output/github-contribution-grid-snake.svg" />
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/YUST777/YUST777/output/github-contribution-grid-snake.svg" />
-  </picture>
-  
-</div>
-
----
-
-## 💡 Random Dev Quote
-
-<div align="center">
-  
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Random Dev Quote" />
-  
-</div>
-
----
-
-## 😂 Dev Jokes
-
-<div align="center">
-  
-  <img src="https://readme-jokes.vercel.app/api?theme=tokyonight&hideBorder=true" alt="Jokes Card" />
-  
-</div>
-
----
-
-## 📈 Contribution Statistics
-
-<div align="center">
-  
-  <img src="https://github-contributor-stats.vercel.app/api/?username=YUST777&limit=5&theme=tokyo-night&combine_all_yearly_contributions=true&hide_border=true" alt="Contribution Stats" />
-  
-</div>
-
----
-
 ## 🤝 Connect With Me
 
 <div align="center">
