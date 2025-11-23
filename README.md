@@ -50,25 +50,6 @@ class YUST:
             return "🚀 Building innovative blockchain solutions on TON!"
 ```
 
-### 🎯 Specializations
-
-- 🔗 **Blockchain Developer** - Built 6 projects on TON Blockchain
-- 🕷️ **Web Scraper** - Expert in data extraction, web scraping, and automation
-- 🗄️ **Database Manager** - Skilled in database design, optimization, and management
-- 💻 **Full Stack Engineer** - Building end-to-end solutions from frontend to blockchain
-
-### 💼 Key Expertise Areas
-
-<div align="center">
-  
-  | **Blockchain** | **Data Management** | **Web Development** |
-  |:---:|:---:|:---:|
-  | TON Blockchain | Web Scraping | Full Stack |
-  | Smart Contracts | Database Design | API Development |
-  | Web3 Integration | Data Processing | UI/UX Design |
-  
-</div>
-
 ---
 
 ## 🛠️ Tech Stack & Tools
@@ -98,45 +79,12 @@ class YUST:
 <div align="center">
   
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=YUST777&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YUST777&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF"/>
   
 </div>
 
 <div align="center">
   
   <img src="https://github-readme-streak-stats.demolab.com/?user=YUST777&theme=tokyonight&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" alt="GitHub Streak" />
-  
-</div>
-
-### 📈 Profile Summary Cards
-
-<div align="center">
-  
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=YUST777&theme=tokyonight" alt="Profile Details" />
-  
-</div>
-
-<div align="center">
-  
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=YUST777&theme=tokyonight" alt="Most Commit Language" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=YUST777&theme=tokyonight" alt="Stats" />
-  
-</div>
-
-<div align="center">
-  
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=YUST777&theme=tokyonight&utcOffset=8" alt="Productive Time" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/commits-per-year?username=YUST777&theme=tokyonight" alt="Commits Per Year" />
-  
-</div>
-
----
-
-## 🏆 GitHub Achievements
-
-<div align="center">
-  
-  <img src="https://github-profile-trophy.vercel.app/?username=YUST777&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&margin-h=4&column=7" alt="GitHub Trophies" />
   
 </div>
 
@@ -208,24 +156,6 @@ class YUST:
 </td>
 </tr>
 </table>
-
----
-
-## 📊 Project Statistics
-
-<div align="center">
-  
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YUST777&layout=donut-vertical&theme=tokyonight&langs_count=10&hide_border=true&bg_color=0D1117&title_color=58A6FF" alt="Most Used Languages" />
-  
-</div>
-
-<div align="center">
-  
-  **32+ Repositories** • **6 TON Blockchain Projects** • **Active Developer**
-  
-  *Building innovative blockchain solutions on TON, web scraping tools, and database management systems*
-  
-</div>
 
 ---
 
