@@ -1,6 +1,6 @@
 <div align="center">
   
-  ![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hey+There!+👋;+I'm+YUST!+🚀;+Full+Stack+Developer;+Building+Awesome+Projects!;)
+  ![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hey+There!+👋;+I'm+YUST!+🚀;+Blockchain+Developer;+TON+Ecosystem+Builder;+Full+Stack+Engineer;)
   
 </div>
 
@@ -25,7 +25,7 @@ class YUST:
     def __init__(self):
         self.name = "YUST"
         self.username = "YUST777"
-        self.role = "Blockchain Developer & Full Stack Developer"
+        self.role = "Blockchain Developer | Full Stack Engineer | TON Ecosystem Builder"
         self.location = "🌍 Earth"
         self.specialization = "TON Blockchain Development"
         
@@ -55,7 +55,7 @@ class YUST:
 - 🔗 **Blockchain Developer** - Built 6 projects on TON Blockchain
 - 🕷️ **Web Scraper** - Expert in data extraction, web scraping, and automation
 - 🗄️ **Database Manager** - Skilled in database design, optimization, and management
-- 💻 **Full Stack Developer** - Building end-to-end solutions from frontend to blockchain
+- 💻 **Full Stack Engineer** - Building end-to-end solutions from frontend to blockchain
 
 ### 💼 Key Expertise Areas
 
@@ -169,20 +169,18 @@ class YUST:
 #### 🔥 Core TON Blockchain Projects
 
 - 🔗 **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - Collectible management toolkit on TON Blockchain (TypeScript)
-- 📊 **[GiftsChart 4](https://github.com/YUST777/giftschart4)** - Advanced gift charting and analytics system (Python)
-- 📦 **[GiftCatalog](https://github.com/YUST777/GiftCatalog.Py)** - Comprehensive gift catalog management system (Python)
+- 📊 **[GiftsChart 4](https://github.com/YUST777/giftschart4)** - Advanced gift charting and analytics system with full version history (Python)
+- 📦 **[GiftCatalog](https://github.com/YUST777/GiftCatalog1.2)** - Comprehensive gift catalog management system with version branches (Python)
 - 💎 **[PXHolder V2](https://github.com/YUST777/PX_Holder_V2)** - Pixel holder and management system on TON
 
 </td>
 <td width="50%">
 
-#### 🛠️ Additional Projects
+#### 🛠️ Additional TON Projects
 
-- 📈 **[GiftsChart 3.9](https://github.com/YUST777/giftschart3.9)** - Gift charting system v3.9 (Python)
-- 📊 **[GiftsChart 3.8.1](https://github.com/YUST777/giftschart3.8.1)** - Gift charting and catalog system (Python)
-- 📋 **[GiftCatalog 1.3](https://github.com/YUST777/GiftCatalog1.3-test)** - Gift catalog testing version
-- 📋 **[GiftCatalog 1.2](https://github.com/YUST777/GiftCatalog1.2)** - Gift catalog version 1.2
-- 💰 **[Project Gift Price](https://github.com/YUST777/Project-Gift-Price)** - Gift pricing and analysis tool
+- 🎨 **[CanvasStory](https://github.com/YUST777/CanvasStory)** - Canvas-based storytelling on TON
+- 😊 **[SmilelyTools](https://github.com/YUST777/smileyTools)** - Utility tools for TON ecosystem
+- 🌐 **[ZeroThratecool](https://github.com/YUST777/ZeroThratecool)** - Zero threat security solutions (HTML/CSS/JS)
 
 </td>
 </tr>
@@ -196,17 +194,15 @@ class YUST:
 
 #### 🎨 TypeScript Projects
 - **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system interface
-- **[hue-test-](https://github.com/YUST777/hue-test-)** - Color and hue testing application
 - **[snap](https://github.com/YUST777/snap)** - Quick snapshots and captures tool
 - **[brainfuel](https://github.com/YUST777/brainfuel)** - Brain training and mental exercises
 
 </td>
 <td width="50%">
 
-#### 🌐 JavaScript Projects
+#### 🌐 JavaScript/Web Projects
 - **[ICPCHUELIME2](https://github.com/YUST777/ICPCHUELIME2)** - Advanced color interface
 - **[ICPCHUELIME](https://github.com/YUST777/ICPCHUELIME)** - Color interface implementation
-- **[ICPCHUE](https://github.com/YUST777/ICPCHUE)** - Color hue management system
 - **[panocool](https://github.com/YUST777/panocool)** - Panoramic view application
 
 </td>
@@ -230,7 +226,6 @@ class YUST:
   *Building innovative blockchain solutions on TON, web scraping tools, and database management systems*
   
 </div>
-
 
 ---
 
@@ -285,16 +280,6 @@ class YUST:
   <a href="https://github.com/YUST777" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
   </a>
-  
-  <!-- Add your social links here -->
-  <!--
-  <a href="https://linkedin.com/in/yourprofile" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="https://twitter.com/yourhandle" target="_blank">
-    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/>
-  </a>
-  -->
   
 </div>
 
