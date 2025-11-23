@@ -1,6 +1,7 @@
+<!-- 🦆 Quack! You found a duck! 🦆 -->
 <div align="center">
   
-  ![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hey+There!+👋;+I'm+YUST!+🚀;+Blockchain+Developer;+TON+Ecosystem+Builder;+Full+Stack+Engineer;)
+  ![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hey+There!+👋;+I'm+YUST!+🚀;+TON+Blockchain+Developer;+6%2B+TON+projects;+Vibe+Coder+🦆;)
   
 </div>
 
@@ -13,6 +14,7 @@
   ![Profile Views](https://komarev.com/ghpvc/?username=YUST777&label=Profile%20Views&color=0e75b6&style=flat-square)
   ![GitHub Followers](https://img.shields.io/github/followers/YUST777?label=Followers&style=flat-square&color=blue)
   ![GitHub Stars](https://img.shields.io/github/stars/YUST777?label=Total%20Stars&style=flat-square&color=yellow)
+  ![Duck Lover](https://img.shields.io/badge/Duck%20Lover-🦆-yellow?style=flat-square)
   
 </div>
 
@@ -20,14 +22,17 @@
 
 ## 👨‍💻 About Me
 
-🚀 **Blockchain Developer | Full Stack Engineer | TON Ecosystem Builder**
+🦆 **TON Blockchain Developer | 6+ TON projects | Vibe Coder**
 
 Building innovative blockchain solutions on The Open Network (TON) Blockchain. Specialized in web scraping, database management, and full-stack development.
 
-- 🔗 Built **6 projects** on TON Blockchain
+- 🔗 Built **6+ projects** on TON Blockchain
 - 🕷️ Expert in **web scraping** and data automation
 - 🗄️ Skilled in **database design** and optimization
 - 💻 Full-stack development from frontend to blockchain
+- 🦆 Duck enthusiast (quack quack!)
+
+<!-- 🦆 Another duck hiding here! 🦆 -->
 
 ---
 
@@ -46,6 +51,8 @@ Building innovative blockchain solutions on The Open Network (TON) Blockchain. S
   ![Web3](https://img.shields.io/badge/Web3-F16822?style=for-the-badge&logoColor=white)
   
 </div>
+
+<!-- 🦆🦆🦆 Three ducks swimming by! 🦆🦆🦆 -->
 
 ---
 
@@ -83,6 +90,8 @@ Building innovative blockchain solutions on The Open Network (TON) Blockchain. S
 - **[snap](https://github.com/YUST777/snap)** - Quick snapshots and captures tool
 - **[brainfuel](https://github.com/YUST777/brainfuel)** - Brain training and mental exercises
 
+<!-- 🦆 Quack! Found another one! 🦆 -->
+
 ---
 
 ## 🤝 Connect With Me
@@ -105,3 +114,9 @@ Building innovative blockchain solutions on The Open Network (TON) Blockchain. S
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=65&section=footer&width=100%&text=Thanks%20for%20Visiting!%20✨&fontSize=30&fontColor=fff&animation=twinkling" />
   
 </div>
+
+<!-- 
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+    A whole flock of ducks! Quack quack! 🦆
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+-->
