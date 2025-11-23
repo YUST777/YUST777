@@ -40,7 +40,9 @@ Building innovative blockchain solutions on The Open Network (TON) Blockchain. S
 
 <div align="center">
   
-  <img src="https://skillicons.dev/icons?i=python,typescript,javascript,html,css,nodejs,react,express,git,github,vscode,linux,postgresql,mongodb" />
+  <img src="https://skillicons.dev/icons?i=python,typescript,javascript,html,css,nodejs,react,git,github,vscode,linux,postgresql,mongodb" />
+  <br>
+  <img src="https://img.shields.io/badge/Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white" alt="Cursor" />
   
 </div>
 
