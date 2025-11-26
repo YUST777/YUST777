@@ -24,13 +24,9 @@
 
 🦆 **TON Blockchain Developer | 6+ TON projects | Vibe Coder**
 
-Building innovative blockchain solutions on The Open Network (TON) Blockchain. Specialized in web scraping, database management, and full-stack development.
+Building innovative blockchain solutions on The Open Network (TON) Blockchain.
 
-- 🔗 Built **6+ projects** on TON Blockchain
-- 🕷️ Expert in **web scraping** and data automation
-- 🗄️ Skilled in **database design** and optimization
-- 💻 Full-stack development from frontend to blockchain
-- 🦆 Duck enthusiast (quack quack!)
+👉 **Check out my portfolio:** [01studio.xyz](https://01studio.xyz/)
 
 <!-- 🦆 Another duck hiding here! 🦆 -->
 
@@ -72,32 +68,13 @@ Building innovative blockchain solutions on The Open Network (TON) Blockchain. S
 
 ---
 
-## 🎯 Featured Projects
-
-### 🔗 TON Blockchain Projects
-
-- **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - Collectible management toolkit on TON Blockchain
-- **[GiftsChart 4](https://github.com/YUST777/giftschart4)** - Advanced gift charting and analytics system
-- **[GiftCatalog](https://github.com/YUST777/GiftCatalog1.2)** - Comprehensive gift catalog management system
-- **[PXHolder V2](https://github.com/YUST777/PX_Holder_V2)** - Pixel holder and management system on TON
-- **[CanvasStory](https://github.com/YUST777/CanvasStory)** - Canvas-based storytelling on TON
-- **[SmilelyTools](https://github.com/YUST777/smileyTools)** - Utility tools for TON ecosystem
-
-### 💻 Other Projects
-
-- **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system interface
-- **[ZeroThratecool](https://github.com/YUST777/ZeroThratecool)** - Zero threat security solutions
-- **[snap](https://github.com/YUST777/snap)** - Quick snapshots and captures tool
-- **[brainfuel](https://github.com/YUST777/brainfuel)** - Brain training and mental exercises
-
-<!-- 🦆 Quack! Found another one! 🦆 -->
-
----
-
 ## 🤝 Connect With Me
 
 <div align="center">
   
+  <a href="https://01studio.xyz/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-01studio-FF6B6B?style=for-the-badge&logo=link&logoColor=white" alt="Portfolio"/>
+  </a>
   <a href="https://github.com/YUST777" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
   </a>
