@@ -26,7 +26,23 @@
 
 Building innovative blockchain solutions on The Open Network (TON) Blockchain.
 
-👉 **Check out my portfolio:** [01studio.xyz](https://01studio.xyz/)
+---
+
+<div align="center">
+
+### 🌐 **Visit My Portfolio**
+
+<h3>
+  <a href="https://01studio.xyz/" target="_blank">
+    <b>👉 01studio.xyz 👈</b>
+  </a>
+</h3>
+
+**Check out all my projects, services, and more!**
+
+</div>
+
+---
 
 <!-- 🦆 Another duck hiding here! 🦆 -->
 
