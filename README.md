@@ -30,6 +30,9 @@ I focus on building tangible solutions that solve real problems — from secure 
 - **Cybersecurity Enthusiast** - Creating tools for online safety (Zero Trust)
 - **Automation Expert** - Writing scripts & Telegram bots in Python
 - **Competitive Programmer** - Developing specialized judge systems
+- 🔭 **Current Focus:** **[ICPCHUE](https://icpchue.xyz)** (Competitive Programming Platform)
+- 🌐 **Portfolio:** **[yousefdev.xyz](https://yousefdev.xyz)**
+- 💬 **Motto:** "Building solutions that actually solve problems."
 
 ### Tech Stack
 <img src="https://skillicons.dev/icons?i=react,nextjs,postgres,python,tailwind" />
