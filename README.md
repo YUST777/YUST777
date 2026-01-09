@@ -24,10 +24,6 @@ I'm **Yousef**, a **Full-Stack Developer** and **Level 2 AI & Cybersecurity Stud
 
 I focus on building tangible solutions that solve real problems — from secure judge platforms to advanced threat intelligence suites.
 
-- 🔭 **Current Focus:** **[ICPCHUE](https://icpchue.xyz)** (Competitive Programming Platform)
-- 🏛️ **Projects:** Zero Threat & Gifts Charts
-- 💬 **Motto:** "Building solutions that actually solve problems."
-
 ### 🎯 Specializations
 
 - 💻 **Full-Stack Developer** - Building reliable web apps with Next.js & React
@@ -54,10 +50,10 @@ I focus on building tangible solutions that solve real problems — from secure 
 
 #### 🏛️ ICPCHUE
 **Online Judge Platform**
-Hardened competitive programming system for 300+ students.
-- A+ SSL Rating
-- Sandboxed Execution
-- 1.4s Load Time
+The beating heart of competitive programming at Horus University.
+- 🐳 **Custom Judge Engine**
+- 🏆 **Gamified Ecosystem**
+- 👥 **Recruitment Pipeline**
 
 </td>
 <td width="33%">
