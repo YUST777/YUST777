@@ -44,36 +44,56 @@ I focus on building tangible solutions that solve real problems — from secure 
   
 </div>
 
+<br/>
+
 <table>
 <tr>
-<td width="33%">
+<td width="33%" align="center">
 
-#### ICPCHUE
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0077b5&height=60&section=header&text=ICPCHUE&fontSize=25&fontColor=ffffff&fontAlign=50" width="100%" />
+
+<br/>
+
 **Online Judge Platform**
 The beating heart of competitive programming at Horus University.
-- Custom Judge Engine
-- Gamified Ecosystem
-- Recruitment Pipeline
+
+<br/>
+
+![Custom Engine](https://img.shields.io/badge/Engine-Custom_Judge-0077b5?style=for-the-badge)
+![Gamified](https://img.shields.io/badge/System-Gamified-0077b5?style=for-the-badge)
+![Recruitment](https://img.shields.io/badge/Pipeline-Recruitment-0077b5?style=for-the-badge)
 
 </td>
-<td width="33%">
+<td width="33%" align="center">
 
-#### Zero Threat
+<img src="https://capsule-render.vercel.app/api?type=rect&color=d32f2f&height=60&section=header&text=Zero%20Threat&fontSize=25&fontColor=ffffff&fontAlign=50" width="100%" />
+
+<br/>
+
 **Cybersecurity Suite**
 AI-driven suite for advanced threat intelligence.
-- National Award Winner (3rd)
-- Universal File Scanner
-- 90% Detection Rate
+
+<br/>
+
+![Award](https://img.shields.io/badge/Award-National_3rd-d32f2f?style=for-the-badge)
+![Scanner](https://img.shields.io/badge/Scanner-Universal-d32f2f?style=for-the-badge)
+![Detection](https://img.shields.io/badge/Detection-90%25-d32f2f?style=for-the-badge)
 
 </td>
-<td width="33%">
+<td width="33%" align="center">
 
-#### Gifts Charts
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0088cc&height=60&section=header&text=Gifts%20Charts&fontSize=25&fontColor=ffffff&fontAlign=50" width="100%" />
+
+<br/>
+
 **Telegram Analytics**
 Real-time sticker & gift price tracking bot.
-- Live Market Pulse
-- Auto Price Cards
-- Premium Subscriptions
+
+<br/>
+
+![Live](https://img.shields.io/badge/Market-Live_Pulse-0088cc?style=for-the-badge)
+![Cards](https://img.shields.io/badge/Feature-Auto_Cards-0088cc?style=for-the-badge)
+![Premium](https://img.shields.io/badge/Plan-Premium-0088cc?style=for-the-badge)
 
 </td>
 </tr>
