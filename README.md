@@ -1,6 +1,6 @@
 <div align="center">
   
-  ![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hey+There!+👋;+I'm+YOUSEF!;+Full-Stack+Developer;+Building+Real+Projects!)
+  ![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hey+There!+👋;+I'm+YOUSEF!;+Full-Stack+Developer;+Building+Real+Stuff!)
   
 </div>
 
@@ -21,54 +21,51 @@
 ## 👨‍💻 About Me
 
 ```python
-class Yousef:
+class YUST:
     def __init__(self):
         self.name = "Yousef"
         self.username = "YUST777"
         self.role = "Full-Stack Developer"
         self.education = "Level 2 AI & Cybersecurity Student"
-        self.location = "🇪🇬 Egypt"
-        self.coding_since = "June 2024"
+        self.location = "� Egypt"
         
     def skills(self):
         return {
-            "languages": ["Python", "TypeScript", "JavaScript"],
-            "frontend": ["React", "Next.js", "Tailwind CSS"],
-            "backend": ["Node.js", "PostgreSQL", "Docker"],
-            "interests": ["Cybersecurity", "Competitive Programming", "Automation"]
+            "main": ["Python", "TypeScript", "JavaScript"],
+            "web": ["Next.js", "React", "PostgreSQL", "Tailwind"],
+            "tools": ["Docker", "Git", "Linux", "VS Code"],
+            "focus": ["Cybersecurity", "Zero Trust", "Automation"]
         }
     
-    def motto(self):
-        return "Learning by doing, building solutions that solve real problems."
+    def current_focus(self):
+        return [
+            "🛡️ Zero Threat (Cybersecurity Suite)", 
+            "🏛️ ICPCHUE (Competitive Programming Platform)",
+            "📊 Gifts Charts (Telegram Analytics)"
+        ]
+        
+    def code(self):
+        return "Building solutions that actually solve problems."
 ```
 
-I'm Yousef, a **Level 2 AI & Cybersecurity student** based in Egypt and a passionate **Full-Stack Developer**. Since June 2024, I've been building real projects to sharpen my skills — from custom judge systems to web platforms. I love learning by doing, and I'm always exploring new technologies to solve interesting problems.
+### 🎯 Specializations
+
+- 💻 **Full-Stack Developer** - Building reliable web apps with Next.js & React
+- 🔒 **Cybersecurity Enthusiast** - Creating tools for online safety (Zero Trust)
+- 🤖 **Automation Expert** - Writing scripts & Telegram bots in Python
+- 🏆 **Competitive Programmer** - Developing specialized judge systems
 
 ---
 
-## 🎯 What I Do
+## 🛠️ Tech Stack & Tools
 
-<div align="center">
-  
-  | **01** | **02** | **03** | **04** |
-  |:---:|:---:|:---:|:---:|
-  | Full-Stack Development | Cybersecurity & Safety | Competitive Programming Tools | Automation & Bots |
-  | Building reliable web apps | Creating tools for online safety | Specialized judge systems | Scripts & Telegram bots |
-  | Next.js, React, PostgreSQL | Zero Trust, Security | Algorithms, Online Judges | Python, Automation |
-  
-</div>
+### 💻 Languages
+<img src="https://skillicons.dev/icons?i=python,typescript,javascript,html,css" />
 
----
+### � Frameworks
+<img src="https://skillicons.dev/icons?i=nodejs,react,nextjs,tailwind,postgres,docker" />
 
-## 🛠️ Tech Stack
-
-### 💻 Languages & Frameworks
-<img src="https://skillicons.dev/icons?i=python,typescript,javascript,react,nextjs,tailwind" />
-
-### 🗄️ Backend & Database
-<img src="https://skillicons.dev/icons?i=nodejs,postgresql,docker" />
-
-### 🛠️ Tools & Platforms
+### 🛠️ Tools
 <img src="https://skillicons.dev/icons?i=git,github,vscode,linux" />
 
 ---
@@ -102,57 +99,53 @@ I'm Yousef, a **Level 2 AI & Cybersecurity student** based in Egypt and a passio
 
 ## 🚀 Featured Projects
 
-### 🔥 Flagship Projects
+### 🔥 Needs No Intro
+<div align="center">
+  
+  **Building innovative solutions that matter**
+  
+</div>
 
 <table>
 <tr>
 <td width="33%">
 
 #### 🏛️ ICPCHUE
-**Hardened Online Judge Platform**
-
-A comprehensive competitive programming platform serving Horus University with secure registration, gamified dashboards, and skill trackers.
-
-- 🛡️ **A+ SSL Rating** (SSL Labs)
-- 👥 **300+ Active Students**
-- ⚡ **1.4s Average Load Time**
-- 🔒 Sandboxed Code Execution
-
-[![Live](https://img.shields.io/badge/Live-icpchue.xyz-blue?style=for-the-badge)](https://icpchue.xyz)
+**Online Judge Platform**
+Hardened competitive programming system for 300+ students.
+- A+ SSL Rating
+- Sandboxed Execution
+- 1.4s Load Time
 
 </td>
 <td width="33%">
 
 #### 🛡️ Zero Threat
-**AI-Driven Cybersecurity Suite**
-
-A comprehensive security ecosystem with web platform, browser extension, and Windows agent for advanced threat intelligence.
-
-- 🏆 **3rd Place** at National Student Forum
-- 🎓 Competed against 20 universities
-- 🔍 90% detection rate benchmarks
-- 🌐 Universal File Scanner
-
-[![Live](https://img.shields.io/badge/Live-zerothreat.yousefdev.xyz-green?style=for-the-badge)](https://zerothreat.yousefdev.xyz)
+**Cybersecurity Suite**
+AI-driven suite for advanced threat intelligence.
+- National Award Winner (3rd)
+- Universal File Scanner
+- 90% Detection Rate
 
 </td>
 <td width="33%">
 
 #### 📊 Gifts Charts
-**Telegram Analytics Bot**
-
-Real-time sticker & gift price tracking bot with auto-generated visuals, premium subscriptions, and live market data.
-
-- ⚡ Real-Time Price Tracking
-- 🎨 Auto-Generated Price Cards
-- 💎 Premium Subscription System
-- 🐳 Dockerized Microservices
-
-[![Bot](https://img.shields.io/badge/Telegram-Bot-0088CC?style=for-the-badge&logo=telegram)](https://t.me/giftsChartBot)
+**Telegram Analytics**
+Real-time sticker & gift price tracking bot.
+- Live Market Pulse
+- Auto Price Cards
+- Premium Subscriptions
 
 </td>
 </tr>
 </table>
+
+### � Other Notable Projects
+
+- 📈 **[GiftsChart 3.9](https://github.com/YUST777/giftschart3.9)** - Advanced analytics (Python)
+- 💎 **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - TON Blockchain tools (TS)
+- 🎨 **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system UI
 
 ---
 
@@ -200,14 +193,5 @@ Real-time sticker & gift price tracking bot with auto-generated visuals, premium
 <div align="center">
   
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=65&section=footer&width=100%&text=Thanks%20for%20Visiting!%20✨&fontSize=30&fontColor=fff&animation=twinkling" />
-  
-</div>
-
-<div align="center">
-  
-  ![Profile Views](https://komarev.com/ghpvc/?username=YUST777&label=Profile%20views&color=0e75b6&style=flat-square)
-  ![GitHub Followers](https://img.shields.io/github/followers/YUST777?label=Followers&style=flat-square&color=blue)
-  
-  *⭐ Star this repository if you find it interesting!*
   
 </div>
