@@ -38,12 +38,6 @@ I focus on building tangible solutions that solve real problems — from secure 
 
 ## Featured Projects
 
-<div align="center">
-  
-  **Building innovative solutions that matter**
-  
-</div>
-
 <br/>
 
 <table>
@@ -54,8 +48,8 @@ I focus on building tangible solutions that solve real problems — from secure 
 
 <br/>
 
-**Online Judge Platform**
-The beating heart of competitive programming at Horus University.
+### Online Judge Platform
+#### The beating heart of competitive programming at Horus University.
 
 <br/>
 
@@ -70,8 +64,8 @@ The beating heart of competitive programming at Horus University.
 
 <br/>
 
-**Cybersecurity Suite**
-AI-driven suite for advanced threat intelligence.
+### Cybersecurity Suite
+#### AI-driven suite for advanced threat intelligence.
 
 <br/>
 
@@ -86,8 +80,8 @@ AI-driven suite for advanced threat intelligence.
 
 <br/>
 
-**Telegram Analytics**
-Real-time sticker & gift price tracking bot.
+### Telegram Analytics
+#### Real-time sticker & gift price tracking bot.
 
 <br/>
 
