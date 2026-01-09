@@ -35,24 +35,13 @@ I focus on building tangible solutions that solve real problems — from secure 
 - 🤖 **Automation Expert** - Writing scripts & Telegram bots in Python
 - 🏆 **Competitive Programmer** - Developing specialized judge systems
 
----
-
-## 🛠️ Tech Stack & Tools
-
-### 💻 Languages
-<img src="https://skillicons.dev/icons?i=python,typescript,javascript,html,css" />
-
-### 🚀 Frameworks
-<img src="https://skillicons.dev/icons?i=nodejs,react,nextjs,tailwind,postgres,docker" />
-
-### 🛠️ Tools
-<img src="https://skillicons.dev/icons?i=git,github,vscode,linux" />
+### 🛠️ Tech Stack
+<img src="https://skillicons.dev/icons?i=react,nextjs,postgres,python,tailwind" />
 
 ---
 
 ## 🚀 Featured Projects
 
-### 🔥 Needs No Intro
 <div align="center">
   
   **Building innovative solutions that matter**
@@ -96,7 +85,7 @@ Real-time sticker & gift price tracking bot.
 
 ### 💻 Other Notable Projects
 
-- 📈 **[GiftsChart 3.9](https://github.com/YUST777/giftschart3.9)** - Advanced analytics (Python)
+- 📈 **[Giftcatalog](https://github.com/YUST777/giftschart3.9)** - Advanced analytics (Python)
 - 💎 **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - TON Blockchain tools (TS)
 - 🎨 **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system UI
 
