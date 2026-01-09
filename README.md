@@ -20,33 +20,13 @@
 
 ## 👨‍💻 About Me
 
-```python
-class YUST:
-    def __init__(self):
-        self.name = "Yousef"
-        self.username = "YUST777"
-        self.role = "Full-Stack Developer"
-        self.education = "Level 2 AI & Cybersecurity Student"
-        self.location = "� Egypt"
-        
-    def skills(self):
-        return {
-            "main": ["Python", "TypeScript", "JavaScript"],
-            "web": ["Next.js", "React", "PostgreSQL", "Tailwind"],
-            "tools": ["Docker", "Git", "Linux", "VS Code"],
-            "focus": ["Cybersecurity", "Zero Trust", "Automation"]
-        }
-    
-    def current_focus(self):
-        return [
-            "🛡️ Zero Threat (Cybersecurity Suite)", 
-            "🏛️ ICPCHUE (Competitive Programming Platform)",
-            "📊 Gifts Charts (Telegram Analytics)"
-        ]
-        
-    def code(self):
-        return "Building solutions that actually solve problems."
-```
+I'm **Yousef**, a **Full-Stack Developer** and **Level 2 AI & Cybersecurity Student** based in **Egypt** 🇪🇬.
+
+I focus on building tangible solutions that solve real problems — from secure judge platforms to advanced threat intelligence suites.
+
+- 🔭 **Current Focus:** **[ICPCHUE](https://icpchue.xyz)** (Competitive Programming Platform)
+- 🏛️ **Projects:** Zero Threat & Gifts Charts
+- 💬 **Motto:** "Building solutions that actually solve problems."
 
 ### 🎯 Specializations
 
@@ -62,38 +42,11 @@ class YUST:
 ### 💻 Languages
 <img src="https://skillicons.dev/icons?i=python,typescript,javascript,html,css" />
 
-### � Frameworks
+### 🚀 Frameworks
 <img src="https://skillicons.dev/icons?i=nodejs,react,nextjs,tailwind,postgres,docker" />
 
 ### 🛠️ Tools
 <img src="https://skillicons.dev/icons?i=git,github,vscode,linux" />
-
----
-
-## 📊 GitHub Statistics
-
-<div align="center">
-  
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=YUST777&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YUST777&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF"/>
-  
-</div>
-
-<div align="center">
-  
-  <img src="https://github-readme-streak-stats.demolab.com/?user=YUST777&theme=tokyonight&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" alt="GitHub Streak" />
-  
-</div>
-
----
-
-## 🏆 GitHub Achievements
-
-<div align="center">
-  
-  <img src="https://github-profile-trophy.vercel.app/?username=YUST777&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&margin-h=4&column=7" alt="GitHub Trophies" />
-  
-</div>
 
 ---
 
@@ -141,7 +94,7 @@ Real-time sticker & gift price tracking bot.
 </tr>
 </table>
 
-### � Other Notable Projects
+### 💻 Other Notable Projects
 
 - 📈 **[GiftsChart 3.9](https://github.com/YUST777/giftschart3.9)** - Advanced analytics (Python)
 - 💎 **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - TON Blockchain tools (TS)
@@ -154,16 +107,6 @@ Real-time sticker & gift price tracking bot.
 <div align="center">
   
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YUST777&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=58A6FF&line=58A6FF&point=FFFFFF" alt="GitHub Activity Graph" />
-  
-</div>
-
----
-
-## 💡 Random Dev Quote
-
-<div align="center">
-  
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Random Dev Quote" />
   
 </div>
 
