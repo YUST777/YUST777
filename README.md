@@ -105,7 +105,7 @@ I focus on building tangible solutions that solve real problems — from secure 
 
 <div align="center">
   
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YUST777&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=58A6FF&line=58A6FF&point=FFFFFF" alt="GitHub Activity Graph" />
+  <img src="https://ghchart.rshah.org/0077b5/YUST777" alt="YUST777's Github Chart" />
   
 </div>
 
