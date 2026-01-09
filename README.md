@@ -1,6 +1,6 @@
 <div align="center">
   
-  ![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hey+There!+👋;+I'm+YOUSEF!;+Full-Stack+Developer;+Building+Real+Stuff!)
+  ![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hey+There!;+I'm+YOUSEF!;+Full-Stack+Developer;+Building+Real+Stuff!)
   
 </div>
 
@@ -18,25 +18,25 @@
 
 ---
 
-## 👨‍💻 About Me
+## About Me
 
-I'm **Yousef**, a **Full-Stack Developer** and **Level 2 AI & Cybersecurity Student** based in **Egypt** 🇪🇬.
+I'm **Yousef**, a **Full-Stack Developer** and **Level 2 AI & Cybersecurity Student** based in **Egypt**.
 
 I focus on building tangible solutions that solve real problems — from secure judge platforms to advanced threat intelligence suites.
 
-### 🎯 Specializations
+### Specializations
 
-- 💻 **Full-Stack Developer** - Building reliable web apps with Next.js & React
-- 🔒 **Cybersecurity Enthusiast** - Creating tools for online safety (Zero Trust)
-- 🤖 **Automation Expert** - Writing scripts & Telegram bots in Python
-- 🏆 **Competitive Programmer** - Developing specialized judge systems
+- **Full-Stack Developer** - Building reliable web apps with Next.js & React
+- **Cybersecurity Enthusiast** - Creating tools for online safety (Zero Trust)
+- **Automation Expert** - Writing scripts & Telegram bots in Python
+- **Competitive Programmer** - Developing specialized judge systems
 
-### 🛠️ Tech Stack
+### Tech Stack
 <img src="https://skillicons.dev/icons?i=react,nextjs,postgres,python,tailwind" />
 
 ---
 
-## 🚀 Featured Projects
+## Featured Projects
 
 <div align="center">
   
@@ -48,17 +48,17 @@ I focus on building tangible solutions that solve real problems — from secure 
 <tr>
 <td width="33%">
 
-#### 🏛️ ICPCHUE
+#### ICPCHUE
 **Online Judge Platform**
 The beating heart of competitive programming at Horus University.
-- 🐳 **Custom Judge Engine**
-- 🏆 **Gamified Ecosystem**
-- 👥 **Recruitment Pipeline**
+- Custom Judge Engine
+- Gamified Ecosystem
+- Recruitment Pipeline
 
 </td>
 <td width="33%">
 
-#### 🛡️ Zero Threat
+#### Zero Threat
 **Cybersecurity Suite**
 AI-driven suite for advanced threat intelligence.
 - National Award Winner (3rd)
@@ -68,7 +68,7 @@ AI-driven suite for advanced threat intelligence.
 </td>
 <td width="33%">
 
-#### 📊 Gifts Charts
+#### Gifts Charts
 **Telegram Analytics**
 Real-time sticker & gift price tracking bot.
 - Live Market Pulse
@@ -79,15 +79,15 @@ Real-time sticker & gift price tracking bot.
 </tr>
 </table>
 
-### 💻 Other Notable Projects
+### Other Notable Projects
 
-- 📈 **[Giftcatalog](https://github.com/YUST777/giftschart3.9)** - Advanced analytics (Python)
-- 💎 **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - TON Blockchain tools (TS)
-- 🎨 **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system UI
+- **[Giftcatalog](https://github.com/YUST777/giftschart3.9)** - Advanced analytics (Python)
+- **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - TON Blockchain tools (TS)
+- **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system UI
 
 ---
 
-## 📈 Contribution Graph
+## Contribution Graph
 
 <div align="center">
   
@@ -97,7 +97,7 @@ Real-time sticker & gift price tracking bot.
 
 ---
 
-## 🤝 Connect With Me
+## Connect With Me
 
 <div align="center">
   
