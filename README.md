@@ -105,7 +105,7 @@ I focus on building tangible solutions that solve real problems — from secure 
 
 <div align="center">
   
-  <img src="https://github-contributions-api.deno.dev/YUST777.svg?scheme=git-dark" alt="YUST777's Contribution Graph" />
+  <img src="https://github-contributions-api.deno.dev/YUST777.svg?scheme=moon" alt="YUST777's Contribution Graph" />
   
 </div>
 
