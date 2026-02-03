@@ -14,17 +14,19 @@
 
 > Building solutions that actually solve problems.
 
-🍬 **[yousefdev.xyz](https://yousefdev.xyz)** - My digital garden & portfolio.
+**[yousefdev.xyz](https://yousefdev.xyz)** - My digital garden & portfolio.
 
 ## Current Projects
 
-- ⚖️ **[Verdict](https://verdict.run)** - Next-gen competitive programming platform.
-- 🏛️ **[ICPCHUE](https://icpchue.xyz)** - The beating heart of competitive programming at Horus University.
-- 🛡️ **[Zero Threat](https://github.com/YUST777)** - The AI agent that actually secures you.
-- 🤖 **[Gifts Charts](https://t.me/yousefmsm1)** - Every NFT have a price, know it live.
-- 🛍️ **[Giftcatalog](https://github.com/YUST777/giftschart3.9)** - All Telegram gifts, one place.
-- 💎 **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - Where tools, games, and earn meet.
-- 📼 **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system UI.
+- **[Verdict](https://verdict.run)** - Next-gen competitive programming platform.
+- **[ICPCHUE](https://icpchue.xyz)** - The beating heart of competitive programming at Horus University.
+- **[Zero Threat](https://github.com/YUST777)** - The AI agent that actually secures you.
+- **[Gifts Charts](https://t.me/yousefmsm1)** - Every NFT have a price, know it live.
+- **[Giftcatalog](https://github.com/YUST777/giftschart3.9)** - All Telegram gifts, one place.
+- **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - Where tools, games, and earn meet.
+- **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system UI.
+- **[01Studio](https://01studio.xyz)** - Building innovative blockchain solutions on TON (Private).
+- **[smileyTools](https://github.com/YUST777/smileyTools)** - Download all the media you want in Telegram.
 
 ## Activity
 
