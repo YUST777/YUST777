@@ -2,7 +2,7 @@
 
 # Hi, I'm Yousef 👋
 
-📍 **Egypt** | 💻 **Full-Stack Developer** | 🔐 **L2 AI & CyberSec Student**
+**Egypt** | **Full-Stack Developer** | **L2 AI & CyberSec Student**
 
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
