@@ -31,7 +31,7 @@
 
 ## Activity
 
-<img src="https://github-contributions-api.deno.dev/YUST777.svg?scheme=moon" alt="YUST777's Contribution Graph" />
+<img src="https://ghchart.rshah.org/0077b5/YUST777" alt="YUST777's Github Chart" />
 
 ## Connect
 
