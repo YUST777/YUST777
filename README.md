@@ -25,7 +25,6 @@
 - **[Giftcatalog](https://github.com/YUST777/giftschart3.9)** - All Telegram gifts, one place.
 - **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - Where tools, games, and earn meet.
 - **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system UI.
-- **[01Studio](https://01studio.xyz)** - Building innovative blockchain solutions on TON (Private).
 - **[smileyTools](https://github.com/YUST777/smileyTools)** - Download all the media you want in Telegram.
 
 ## Activity
