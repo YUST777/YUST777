@@ -1,3 +1,5 @@
+![Banner](./banner.jpg)
+
 # Hi, I'm Yousef 👋
 
 📍 **Egypt** | 💻 **Full-Stack Developer** | 🔐 **L2 AI & CyberSec Student**
