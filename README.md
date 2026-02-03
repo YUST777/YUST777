@@ -1,141 +1,38 @@
-<div align="center">
-  
-  ![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hey+There!;+I'm+YOUSEF!;+Full-Stack+Developer;+Building+Real+Stuff!)
-  
-</div>
+# Hi, I'm Yousef 👋
 
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=header&width=100%&text=YUST777&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32" />
-</div>
+📍 **Egypt** | 💻 **Full-Stack Developer** | 🔐 **L2 AI & CyberSec Student**
 
-<div align="center">
-  
-  ![Profile Views](https://komarev.com/ghpvc/?username=YUST777&label=Profile%20Views&color=0e75b6&style=flat-square)
-  ![GitHub Followers](https://img.shields.io/github/followers/YUST777?label=Followers&style=flat-square&color=blue)
-  ![GitHub Stars](https://img.shields.io/github/stars/YUST777?label=Total%20Stars&style=flat-square&color=yellow)
-  
-</div>
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Tailwind](https://img.shields.io/badge/-Tailwind-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white)
+![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 
----
+![Profile Views](https://komarev.com/ghpvc/?username=YUST777&label=Profile%20Views&color=0e75b6&style=flat-square)
 
-## About Me
+> Building solutions that actually solve problems.
 
-I'm **Yousef**, a **Full-Stack Developer** and **Level 2 AI & Cybersecurity Student** based in **Egypt**.
+🍬 **[yousefdev.xyz](https://yousefdev.xyz)** - My digital garden & portfolio.
 
-I focus on building tangible solutions that solve real problems — from secure judge platforms to advanced threat intelligence suites.
+## Current Projects
 
-### Specializations
+- ⚖️ **[Verdict](https://verdict.run)** - Next-gen competitive programming platform.
+- 🏛️ **[ICPCHUE](https://icpchue.xyz)** - The beating heart of competitive programming at Horus University.
+- 🛡️ **[Zero Threat](https://github.com/YUST777)** - The AI agent that actually secures you.
+- 🤖 **[Gifts Charts](https://t.me/yousefmsm1)** - Every NFT have a price, know it live.
+- 🛍️ **[Giftcatalog](https://github.com/YUST777/giftschart3.9)** - All Telegram gifts, one place.
+- 💎 **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - Where tools, games, and earn meet.
+- 📼 **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system UI.
 
-- **Full-Stack Developer** - Building reliable web apps with Next.js & React
-- **Cybersecurity Enthusiast** - Creating tools for online safety (Zero Trust)
-- **Automation Expert** - Writing scripts & Telegram bots in Python
-- **Competitive Programmer** - Developing specialized judge systems
+## Activity
 
-👉 **Check out my portfolio:** **[yousefdev.xyz](https://yousefdev.xyz)**
+<img src="https://github-contributions-api.deno.dev/YUST777.svg?scheme=moon" alt="YUST777's Contribution Graph" />
 
-### Tech Stack
-<img src="https://skillicons.dev/icons?i=react,nextjs,postgres,python,tailwind" />
+## Connect
 
----
-
-## Featured Projects
-
-<br/>
-
-<table>
-<tr>
-<td width="33%" align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0077b5&height=60&section=header&text=ICPCHUE&fontSize=25&fontColor=ffffff&fontAlign=50" width="100%" />
-
-<br/>
-
-### Online Judge Platform
-#### The beating heart of competitive programming at Horus University.
-
-<br/>
-
-![Custom Engine](https://img.shields.io/badge/Engine-Custom_Judge-0077b5?style=for-the-badge)
-![Gamified](https://img.shields.io/badge/System-Gamified-0077b5?style=for-the-badge)
-![Recruitment](https://img.shields.io/badge/Pipeline-Recruitment-0077b5?style=for-the-badge)
-
-</td>
-<td width="33%" align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=d32f2f&height=60&section=header&text=Zero%20Threat&fontSize=25&fontColor=ffffff&fontAlign=50" width="100%" />
-
-<br/>
-
-### Cybersecurity Suite
-#### AI-driven suite for advanced threat intelligence.
-
-<br/>
-
-![Award](https://img.shields.io/badge/Award-National_3rd-d32f2f?style=for-the-badge)
-![Scanner](https://img.shields.io/badge/Scanner-Universal-d32f2f?style=for-the-badge)
-![Detection](https://img.shields.io/badge/Detection-90%25-d32f2f?style=for-the-badge)
-
-</td>
-<td width="33%" align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0088cc&height=60&section=header&text=Gifts%20Charts&fontSize=25&fontColor=ffffff&fontAlign=50" width="100%" />
-
-<br/>
-
-### Telegram Analytics
-#### Real-time sticker & gift price tracking bot.
-
-<br/>
-
-![Live](https://img.shields.io/badge/Market-Live_Pulse-0088cc?style=for-the-badge)
-![Cards](https://img.shields.io/badge/Feature-Auto_Cards-0088cc?style=for-the-badge)
-![Premium](https://img.shields.io/badge/Plan-Premium-0088cc?style=for-the-badge)
-
-</td>
-</tr>
-</table>
-
-### Other Notable Projects
-
-- **[Giftcatalog](https://github.com/YUST777/giftschart3.9)** - Advanced analytics (Python)
-- **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - TON Blockchain tools (TS)
-- **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system UI
-
----
-
-## Contribution Graph
-
-<div align="center">
-  
-  <img src="https://github-contributions-api.deno.dev/YUST777.svg?scheme=moon" alt="YUST777's Contribution Graph" />
-  
-</div>
-
----
-
-## Connect With Me
-
-<div align="center">
-  
-  <a href="https://github.com/YUST777" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-  </a>
-  <a href="https://www.linkedin.com/in/yousefmsm1/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="https://t.me/yousefmsm1" target="_blank">
-    <img src="https://img.shields.io/badge/Telegram-0088CC?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
-  </a>
-  <a href="https://yousefdev.xyz" target="_blank">
-    <img src="https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=About.me&logoColor=white" alt="Website"/>
-  </a>
-  
-</div>
-
----
-
-<div align="center">
-  
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=65&section=footer&width=100%&text=Thanks%20for%20Visiting!%20✨&fontSize=30&fontColor=fff&animation=twinkling" />
-  
-</div>
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/YUST777)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yousefmsm1/)
+[![Telegram](https://img.shields.io/badge/-Telegram-0088CC?style=flat-square&logo=telegram&logoColor=white)](https://t.me/yousefmsm1)
+[![Website](https://img.shields.io/badge/-Website-000000?style=flat-square&logo=About.me&logoColor=white)](https://yousefdev.xyz)
