@@ -22,11 +22,11 @@
 
 - **[Verdict](https://verdict.run)** - Next-gen competitive programming platform.
 - **[ICPCHUE](https://icpchue.xyz)** - The beating heart of competitive programming at Horus University.
-- **[Zero Threat](https://github.com/YUST777/ZeroThrat-All)** - The AI agent that actually secures you.
-- **[Gifts Charts](https://t.me/giftschartbot)** - Every NFT have a price, know it live.
-- **[Giftcatalog](https://github.com/YUST777/GiftCatalog-ALL)** - All Telegram gifts, one place.
+- **[Zero Threat](https://github.com/YUST777)** - The AI agent that actually secures you.
+- **[Gifts Charts](https://github.com/YUST777/Giftschart)** - Every NFT have a price, know it live.
+- **[Giftcatalog](https://github.com/YUST777/GiftCatalog)** - All Telegram gifts, one place.
 - **[CollectibleKIT](https://github.com/YUST777/CollectibleKIT)** - Where tools, games, and earn meet.
-- **[retroOS](https://github.com/YUST777/retroOS)** - Retro operating system UI.
+- **[retroOS](https://github.com/YUST777)** - Retro operating system UI.
 - **[smileyTools](https://github.com/YUST777/smileyTools)** - Download all the media you want in Telegram.
 
 ## Activity
