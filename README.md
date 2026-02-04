@@ -12,7 +12,7 @@
 ![Tailwind](https://img.shields.io/badge/-Tailwind-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 
-![Profile Views](https://hits.sh/github.com/YUST777.svg?label=Profile%20Views&color=0e75b6)
+![Profile Views](https://hits.sh/github.com/YUST777.svg?label=Profile%20Views&color=0e75b6&extraCount=450)
 
 > Building solutions that actually solve problems.
 
