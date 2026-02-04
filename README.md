@@ -12,7 +12,7 @@
 ![Tailwind](https://img.shields.io/badge/-Tailwind-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 
-![Profile Views](https://komarev.com/ghpvc/?username=YUST777&label=Profile%20Views&color=0e75b6&style=flat-square)
+![Profile Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FYUST777&count_bg=%230E75B6&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true)
 
 > Building solutions that actually solve problems.
 
