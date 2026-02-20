@@ -21,6 +21,7 @@
 ## Current Projects
 
 - **[Verdict](https://verdict.run)** - Next-gen competitive programming platform.
+- **[Sast](https://sats.tech)** - Your code ships fast We make sure it ships safe.
 - **[ICPCHUE](https://icpchue.xyz)** - The beating heart of competitive programming at Horus University.
 - **[Zero Threat](https://github.com/YUST777)** - The AI agent that actually secures you.
 - **[Gifts Charts](https://github.com/YUST777/Giftschart)** - Every NFT have a price, know it live.
