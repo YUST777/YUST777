@@ -16,7 +16,7 @@
 
 > Building solutions that actually solve problems.
 
-**[yousefdev.xyz](https://yousefdev.xyz)** - My digital garden & portfolio.
+**[yust.dev](https://yust.dev)** - My digital garden & portfolio.
 
 ## Current Projects
 
