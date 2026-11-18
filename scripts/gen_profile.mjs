@@ -190,6 +190,20 @@ const trophy = (color) =>
   `data:image/svg+xml;base64,${Buffer.from(
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 8" shape-rendering="crispEdges"><path fill="${color}" d="M1 0h5v1H1z M0 1h7v2H0z M1 3h5v1H1z M2 4h3v1H2z M3 5h1v1H3z M2 6h3v1H2z M1 7h5v1H1z"/></svg>`,
   ).toString("base64")}`;
+// Trophy pixels (7x8 grid, same shape as PixelTrophy), built bottom-up then cleared, on a loop.
+const TROPHY_ROWS = [[1, 5], [0, 6], [0, 6], [1, 5], [2, 4], [3, 3], [2, 4], [1, 5]];
+const animatedTrophy = (svg) =>
+  svg.replace(/<image[^>]*?x="([\d.]+)" y="([\d.]+)" width="([\d.]+)" height="([\d.]+)"[^>]*href="data:image\/svg\+xml;base64,([^"]+)"[^>]*\/>/g, (tag, x, y, w, h, b64) => {
+    const color = Buffer.from(b64, "base64").toString().match(/fill="(#[0-9A-Fa-f]{6})"/)?.[1];
+    if (!color) return tag;
+    let i = 0;
+    const px = [];
+    for (let r = 7; r >= 0; r--)
+      for (let c = TROPHY_ROWS[r][0]; c <= TROPHY_ROWS[r][1]; c++)
+        px.push(`<rect class="px" x="${c}" y="${r}" width="1" height="1" fill="${color}" style="animation-delay:${(i++ * 0.05).toFixed(2)}s"/>`);
+    return `<svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="0 0 7 8" shape-rendering="crispEdges">${px.join("")}</svg>`;
+  }).replace(/(<svg[^>]*>)/, `$1<style>.px{opacity:0;animation:build 6s ease-out infinite}@keyframes build{0%{opacity:0}4%{opacity:1}80%{opacity:1}90%,100%{opacity:0}}</style>`);
+
 // All wins in one card (separate chips looked like mismatched widgets side by side).
 const hackathons = await draw(
   "hackathons",
@@ -210,6 +224,7 @@ const hackathons = await draw(
       ]);
     }),
   ]),
+  animatedTrophy,
 );
 
 // Contribution heatmap in the site's blue instead of GitHub green.
@@ -218,13 +233,28 @@ let contrib = null;
 if (calendar) {
   const weeks = calendar.weeks.slice(-53);
   const CELL = 17;
-  const GAPC = 3.6;
+  const PADX = 52;
+  const TOP = 100; // padding 40 + header 40 + gap 20
+  const STEP_X = (1200 - 2 * PADX - CELL) / (weeks.length - 1);
+  const STEP_Y = 20.6;
+  const GRID_H = Math.ceil(6 * STEP_Y + CELL);
+  const cells = [];
+  weeks.forEach((w, wi) => {
+    const offset = wi === 0 ? 7 - w.contributionDays.length : 0; // first week may start mid-week
+    w.contributionDays.forEach((d, di) => {
+      const x = (PADX + wi * STEP_X).toFixed(1);
+      const y = (TOP + (di + offset) * STEP_Y).toFixed(1);
+      cells.push(`<rect class="c" x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="4" fill="${LEVEL[d.contributionLevel]}" style="animation-delay:${(wi * 0.03 + di * 0.02).toFixed(2)}s"/>`);
+    });
+  });
+  // cells sweep in left to right on load; the busiest ones keep a slow glow
+  const style = `<style>.c{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .5s cubic-bezier(.3,1.6,.5,1) forwards}@keyframes pop{0%{opacity:0;transform:scale(.3)}100%{opacity:1;transform:scale(1)}}rect[fill="${LEVEL.FOURTH_QUARTILE}"]{animation:pop .5s cubic-bezier(.3,1.6,.5,1) forwards,glow 2.4s ease-in-out 2s infinite}@keyframes glow{50%{opacity:.45}}</style>`;
   contrib = await draw(
     "contributions",
     1200,
-    260,
-    card({ flexDirection: "column", justifyContent: "center", padding: "0 52px" }, [
-      el({ justifyContent: "space-between", alignItems: "center", marginBottom: 22 }, [
+    TOP + GRID_H + 40,
+    card({ flexDirection: "column", padding: `40px ${PADX}px` }, [
+      el({ height: 40, justifyContent: "space-between", alignItems: "center" }, [
         el({ alignItems: "baseline" }, [
           pixel(30, C.white, calendar.totalContributions.toLocaleString("en-US")),
           mono(18, C.dim, "contributions in the last year", { marginLeft: 16 }),
@@ -235,16 +265,8 @@ if (calendar) {
           mono(15, C.dim, "more", { marginLeft: 4 }),
         ]),
       ]),
-      el(
-        { justifyContent: "space-between" },
-        weeks.map((w, wi) =>
-          el(
-            { flexDirection: "column", justifyContent: wi === 0 ? "flex-end" : "flex-start" },
-            w.contributionDays.map((d) => el({ width: CELL, height: CELL, borderRadius: 4, background: LEVEL[d.contributionLevel], marginBottom: GAPC })),
-          ),
-        ),
-      ),
     ]),
+    (svg) => svg.replace(/<\/svg>$/, `${style}${cells.join("")}</svg>`),
   );
 }
 
