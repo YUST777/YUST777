@@ -1,5 +1,5 @@
 // Generates README.md and the SVG cards in assets/cards from profile.config.json plus live data:
-// GitHub API, the yust.dev repo (projects + blog) and the yust.dev LinkedIn followers API.
+// GitHub API, the yust.dev repo (projects) and the yust.dev LinkedIn followers API.
 // The README is images only; every card is an SVG drawn in the yust.dev theme.
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import satori from "satori";
@@ -41,13 +41,12 @@ const esc = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g
 const fmt = (n) => (n == null ? "-" : n >= 10000 ? `${(n / 1000).toFixed(1)}k` : n.toLocaleString("en-US"));
 const host = (url) => url.replace(/^\w+:\/\/(www\.)?/, "").replace(/\/$/, "");
 
-const [user, repos, commits, linkedin, projectsSrc, blogSrc] = await Promise.all([
+const [user, repos, commits, linkedin, projectsSrc] = await Promise.all([
   safe("user", () => gh(`/users/${cfg.user}`), {}),
   safe("repos", () => gh(`/users/${cfg.user}/repos?per_page=100&sort=pushed`), []),
   safe("commits", async () => (await gh(`/search/commits?q=author:${cfg.user}&per_page=1`)).total_count, null),
   safe("linkedin", async () => (await getJson(cfg.site.followersApi)).followers, null),
   safe("projects", () => raw("src/components/projects/ProjectsData.ts"), ""),
-  safe("blog", () => raw("src/data/blog.ts"), ""),
 ]);
 
 const own = repos.filter((r) => !r.fork && r.name.toLowerCase() !== cfg.user.toLowerCase());
@@ -60,7 +59,7 @@ const stats = [
   ["LINKEDIN", linkedin],
 ];
 
-const projects = projectsSrc
+const allProjects = projectsSrc
   .split(/\n  \{\n/)
   .slice(1)
   .map((c) => ({
@@ -69,29 +68,24 @@ const projects = projectsSrc
     tag: clean(field(c, "tag")),
     url: field(c, "siteLink"),
     tech: list(c, "technologies").map(clean),
-  }))
-  .filter((p) => p.title && p.url && p.desc)
-  .slice(0, cfg.maxProjects);
-
-const posts = blogSrc
-  .split(/\n  \{\n/)
-  .slice(1)
-  .map((c) => ({ title: clean(field(c, "title")), slug: field(c, "slug"), date: field(c, "date") }))
-  .filter((p) => p.title && p.slug)
-  .slice(0, cfg.maxPosts);
+  }));
+// Featured projects come from config (title + screenshot); text comes from the site data.
+const projects = cfg.featured
+  .map((f) => ({ ...allProjects.find((p) => p.title === f.title), ...f }))
+  .filter((p) => p.url && p.desc);
 
 const recent = own.slice(0, cfg.maxRepos);
 
 // ---- theme (matches yust.dev) ----
 const C = {
   bg: "#0c0c0c",
-  card: "#141414",
-  line: "#232326",
+  card: "#0c0c0c",
+  line: "#252528",
   white: "#ffffff",
   text: "#a1a1aa",
   dim: "#71717a",
   faint: "#3f3f46",
-  accent: "#f97316",
+  accent: "#60a5fa",
 };
 const W = 1200;
 const PAD = 56;
@@ -117,7 +111,7 @@ const pill = (text, color = C.text) =>
 const arrow = (color = C.dim) => mono(30, color, "↗");
 const blink = (svg) =>
   svg.replace(
-    /(<rect[^>]*fill="#f97316"[^>]*)\/>/,
+    new RegExp(`(<rect[^>]*fill="${C.accent}"[^>]*)\\/>`),
     '$1><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" repeatCount="indefinite"/></rect>',
   );
 
@@ -127,18 +121,6 @@ async function draw(name, h, tree, { w = W, post = (s) => s } = {}) {
   writeFileSync(`${OUT}/${name}.svg`, post(await satori(tree, { width: w, height: h, fonts })));
   return `${OUT}/${name}.svg`;
 }
-
-// Rough word wrap for GeistMono (0.6em advance) so text cards get the right height.
-const wrapLines = (text, size, width) => {
-  const max = Math.floor(width / (size * 0.6));
-  let lines = 1;
-  let len = 0;
-  for (const w of text.split(/\s+/)) {
-    if (len && len + 1 + w.length > max) (lines++, (len = w.length));
-    else len += (len ? 1 : 0) + w.length;
-  }
-  return lines;
-};
 
 // ---- cards ----
 const hero = await draw(
@@ -157,7 +139,11 @@ const hero = await draw(
         pixel(84, C.white, cfg.name, { letterSpacing: 2 }),
         el({ width: 14, height: 76, background: C.accent, marginLeft: 18 }),
       ]),
-      mono(24, C.text, cfg.tagline, { marginTop: 18 }),
+      el({ marginTop: 18, alignItems: "center" }, [
+        mono(24, C.white, cfg.fullName),
+        mono(24, C.faint, "/", { margin: "0 16px" }),
+        mono(24, C.text, cfg.tagline),
+      ]),
     ]),
     el(
       { borderTop: `1px solid ${C.line}`, paddingTop: 30, justifyContent: "space-between" },
@@ -172,17 +158,6 @@ const hero = await draw(
   { post: blink },
 );
 
-const bioSize = 25;
-const bioLines = wrapLines(cfg.bio, bioSize, W - 2 * PAD - 8);
-const about = await draw(
-  "about",
-  2 * 48 + bioLines * bioSize * 1.6 + 4,
-  card({ padding: `46px ${PAD}px`, alignItems: "flex-start" }, [
-    el({ width: 4, alignSelf: "stretch", background: C.accent, marginRight: 28, borderRadius: 2 }),
-    mono(bioSize, C.text, cfg.bio, { flex: 1, lineHeight: 1.6 }),
-  ]),
-);
-
 const header = (name, label, count) =>
   draw(
     name,
@@ -195,38 +170,26 @@ const header = (name, label, count) =>
     ]),
   );
 
+const shot = (name) => `data:image/jpeg;base64,${readFileSync(`assets/shots/${name}.jpg`).toString("base64")}`;
 const projectCards = [];
 for (const [i, p] of projects.entries()) {
   projectCards.push(
     await draw(
       `project-${i}`,
-      210,
-      card({ padding: `34px ${PAD}px`, flexDirection: "column", justifyContent: "space-between" }, [
-        el({ alignItems: "center", justifyContent: "space-between" }, [
-          el({ alignItems: "center" }, [
-            pixel(18, C.faint, String(i + 1).padStart(2, "0"), { marginRight: 22 }),
-            pixel(36, C.white, p.title),
-            p.tag ? mono(16, C.accent, p.tag.toUpperCase(), { marginLeft: 22, letterSpacing: 1.5 }) : null,
+      650,
+      card({ padding: 20, flexDirection: "column" }, [
+        { type: "img", props: { src: shot(p.image), width: W - 42, height: 470, style: { borderRadius: 10, objectFit: "cover" } } },
+        el({ flex: 1, flexDirection: "column", justifyContent: "center", padding: "0 16px" }, [
+          el({ alignItems: "center", justifyContent: "space-between" }, [
+            el({ alignItems: "center" }, [
+              pixel(18, C.faint, String(i + 1).padStart(2, "0"), { marginRight: 22 }),
+              pixel(36, C.white, p.title),
+              p.tag ? mono(16, C.accent, p.tag.toUpperCase(), { marginLeft: 22, letterSpacing: 1.5 }) : null,
+            ]),
+            el({ alignItems: "center" }, [mono(18, C.dim, host(p.url), { marginRight: 14 }), arrow()]),
           ]),
-          el({ alignItems: "center" }, [mono(18, C.dim, host(p.url), { marginRight: 14 }), arrow()]),
+          mono(22, C.text, p.desc, { ...oneLine, marginLeft: 50, marginTop: 16 }),
         ]),
-        mono(22, C.text, p.desc, { ...oneLine, marginLeft: 50 }),
-        el({ marginLeft: 50 }, p.tech.slice(0, 5).map((t) => pill(t))),
-      ]),
-    ),
-  );
-}
-
-const postCards = [];
-for (const [i, p] of posts.entries()) {
-  postCards.push(
-    await draw(
-      `post-${i}`,
-      92,
-      card({ alignItems: "center", padding: `0 ${PAD}px` }, [
-        mono(18, C.dim, (p.date ?? "").toUpperCase(), { width: 170, letterSpacing: 1 }),
-        mono(23, C.white, p.title, { ...oneLine, flex: 1, marginRight: 24 }),
-        arrow(),
       ]),
     ),
   );
@@ -310,22 +273,13 @@ const block = (lines) => ["<p align=\"center\">", ...lines, "</p>", ""];
 const md = [
   "<!-- Generated by scripts/gen_profile.mjs. Edit profile.config.json instead. -->",
   "",
-  ...block([img(hero, `${cfg.name}: ${cfg.tagline}. ${stats.map(([l, n]) => `${fmt(n)} ${l.toLowerCase()}`).join(", ")}`)]),
-  ...block([img(about, cfg.bio)]),
+  ...block([img(hero, `${cfg.fullName} (${cfg.name}), ${cfg.tagline}. ${stats.map(([l, n]) => `${fmt(n)} ${l.toLowerCase()}`).join(", ")}`)]),
 ];
 if (projectCards.length) {
   md.push(
     ...block([
       img(await header("h-projects", "PROJECTS", projectCards.length), "Projects") + "<br>",
       ...projectCards.map((src, i) => link(projects[i].url, img(src, `${projects[i].title}: ${projects[i].desc}`)) + "<br>"),
-    ]),
-  );
-}
-if (postCards.length) {
-  md.push(
-    ...block([
-      img(await header("h-writing", "WRITING", postCards.length), "Writing") + "<br>",
-      ...postCards.map((src, i) => link(`${cfg.site.url}/blog/${posts[i].slug}`, img(src, `${posts[i].title}, ${posts[i].date}`)) + "<br>"),
     ]),
   );
 }
@@ -345,4 +299,4 @@ md.push(
   ...block([img(ticker, "Stats and stack ticker")]),
 );
 writeFileSync("README.md", md.join("\n"));
-console.log(`projects=${projects.length} posts=${posts.length} repos=${recent.length}`, stats.map((s) => s.join("=")).join(" "));
+console.log(`projects=${projects.length} repos=${recent.length}`, stats.map((s) => s.join("=")).join(" "));
