@@ -295,11 +295,12 @@ const md = [
   "",
   ...block([img(hero, `${cfg.fullName}, ${cfg.tagline}. ${stats.map(([l, n]) => `${fmt(n)} ${l.toLowerCase()}`).join(", ")}`)]),
   ...block([img(stack, `Stack: ${cfg.stack.map((k) => icons[k].title).join(", ")}`)]),
-  // Waddle (tall) floats right; SWRMZ and ICPCHUE stack on the left. Widths match the 1064/16/520 px panel layout.
+  // Waddle (tall) floats right; SWRMZ and ICPCHUE stack on the left. GitHub pads align=right images by 20px,
+  // so widths leave room for it; 31.3% x 900/520 ~= 2 x 65% x 442/1064 keeps both columns the same height.
   ...block([
-    link(cfg.projects[0].url, img(cfg.projects[0].image, cfg.projects[0].alt, 'width="32.5%" align="right"')),
-    link(cfg.projects[1].url, img(cfg.projects[1].image, cfg.projects[1].alt, 'width="66.5%"')) + "<br>",
-    link(cfg.projects[2].url, img(cfg.projects[2].image, cfg.projects[2].alt, 'width="66.5%"')),
+    link(cfg.projects[0].url, img(cfg.projects[0].image, cfg.projects[0].alt, 'width="31.3%" align="right"')),
+    link(cfg.projects[1].url, img(cfg.projects[1].image, cfg.projects[1].alt, 'width="65%"')) + "<br>",
+    link(cfg.projects[2].url, img(cfg.projects[2].image, cfg.projects[2].alt, 'width="65%"')),
   ]).map((l) => (l === '<p align="center">' ? "<p>" : l)),
   ...block([
     link(
