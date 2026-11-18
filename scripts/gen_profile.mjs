@@ -271,8 +271,8 @@ if (calendar) {
 }
 
 // ---- readme ----
-// loading="lazy": below-the-fold cards load when scrolled near, so their animations start on arrival.
-const img = (src, alt, attrs = 'width="100%"') => `<img src="${src}" ${attrs} loading="lazy" alt="${esc(alt)}" />`;
+// No scroll trigger is possible: GitHub strips loading="lazy" and runs no JS, so card animations loop instead.
+const img = (src, alt, attrs = 'width="100%"') => `<img src="${src}" ${attrs} alt="${esc(alt)}" />`;
 const link = (href, inner) => `<a href="${href}">${inner}</a>`;
 const block = (lines) => ['<p align="center">', ...lines, "</p>", ""];
 
