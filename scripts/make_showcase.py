@@ -39,14 +39,21 @@ def panel(w, h, top, bottom, shot, pad, title, desc, ink):
     bg.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(18)))
     bg.alpha_composite(s, (x, y))
     d = ImageDraw.Draw(bg)
-    tf = ImageFont.truetype("assets/fonts/silkscreen-700.ttf", 34)
-    bf = ImageFont.truetype("assets/fonts/GeistMono-Regular.ttf", 19)
-    body = "\n".join(textwrap.wrap(desc, 24))
-    th = 34 + 22 + d.multiline_textbbox((0, 0), body, font=bf, spacing=8)[3]
-    ty = (h - th) // 2
-    d.text((pad + 8, ty), title, font=tf, fill=ink)
-    d.multiline_text((pad + 8, ty + 56), body, font=bf, fill=ink + (200,), spacing=8)
+    label(d, pad + 8, None, h, title, desc, ink, 26)
     return rounded(bg, R)
+
+
+TF = ImageFont.truetype("assets/fonts/Geist-SemiBold.ttf", 42)
+BF = ImageFont.truetype("assets/fonts/Geist-Regular.ttf", 22)
+
+
+def label(d, x, y, h, title, desc, ink, wrap):
+    """Title + wrapped description; vertically centred in h when y is None."""
+    body = "\n".join(textwrap.wrap(desc, wrap))
+    th = 42 + 18 + d.multiline_textbbox((0, 0), body, font=BF, spacing=8)[3]
+    y = (h - th) // 2 if y is None else y
+    d.text((x, y), title, font=TF, fill=ink)
+    d.multiline_text((x, y + 60), body, font=BF, fill=ink + (190,), spacing=8)
 
 
 canvas = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -56,19 +63,21 @@ icpc = Image.open(f"{SHOTS}/icpchue_dashboard.jpg")
 canvas.alpha_composite(panel(LEFT_W, half, (120, 18, 28), (20, 6, 10), swrmz, 34, "SWRMZ", "A swarm of AI agents that hunts the holes in your stack.", (255, 255, 255)), (0, 0))
 canvas.alpha_composite(panel(LEFT_W, half, (250, 196, 40), (232, 110, 20), icpc, 34, "ICPCHUE", "Training platform and online judge for competitive programmers.", (20, 14, 6)), (0, half + GAP))
 
-# phone: crop the screen out of the waddle video frame and draw our own bezel
-screen = Image.open(WADDLE_FRAME).convert("RGB").crop((1182, 62, 1620, 1015))
-ph_h = H - 2 * 50
-ph_w = round(screen.width * (ph_h - 24) / screen.height) + 24
+# phone: crop just the app screen out of the waddle video frame (below the notch, inside the bezel)
+screen = Image.open(WADDLE_FRAME).convert("RGB").crop((1188, 128, 1614, 985))
+PW, TOP = 520, 180
+ph_h = H - TOP - 40
+ph_w = round(screen.width * (ph_h - 20) / screen.height) + 20
 phone = Image.new("RGBA", (ph_w, ph_h), (0, 0, 0, 0))
-ImageDraw.Draw(phone).rounded_rectangle((0, 0, ph_w, ph_h), 52, fill=(18, 18, 20, 255))
-phone.alpha_composite(rounded(screen.resize((ph_w - 24, ph_h - 24), Image.LANCZOS), 40), (12, 12))
-right = gradient(520, H, (255, 214, 170), (240, 140, 70)).convert("RGBA")
+ImageDraw.Draw(phone).rounded_rectangle((0, 0, ph_w, ph_h), 44, fill=(24, 18, 14, 255))
+phone.alpha_composite(rounded(screen.resize((ph_w - 20, ph_h - 20), Image.LANCZOS), 34), (10, 10))
+right = gradient(PW, H, (255, 214, 170), (240, 140, 70)).convert("RGBA")
 shadow = Image.new("RGBA", right.size, (0, 0, 0, 0))
-px, py = (520 - ph_w) // 2, 50
-ImageDraw.Draw(shadow).rounded_rectangle((px, py + 14, px + ph_w, py + ph_h + 14), 52, fill=(80, 30, 0, 120))
+px, py = (PW - ph_w) // 2, TOP
+ImageDraw.Draw(shadow).rounded_rectangle((px, py + 14, px + ph_w, py + ph_h + 14), 44, fill=(80, 30, 0, 120))
 right.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(22)))
 right.alpha_composite(phone, (px, py))
+label(ImageDraw.Draw(right), 42, 40, H, "Waddle", "Learn web dev five minutes a day, with a duck.", (40, 20, 6), 27)
 canvas.alpha_composite(rounded(right, R), (LEFT_W + GAP, 0))
 
 canvas.save("assets/showcase.png", optimize=True)
