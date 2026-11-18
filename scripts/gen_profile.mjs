@@ -49,7 +49,6 @@ const [user, repos, commits, linkedin, projectsSrc] = await Promise.all([
   safe("projects", () => raw("src/components/projects/ProjectsData.ts"), ""),
 ]);
 
-const own = repos.filter((r) => !r.fork && r.name.toLowerCase() !== cfg.user.toLowerCase());
 const stars = repos.reduce((n, r) => n + (r.stargazers_count || 0), 0);
 const stats = [
   ["COMMITS", commits],
@@ -69,12 +68,11 @@ const allProjects = projectsSrc
     url: field(c, "siteLink"),
     tech: list(c, "technologies").map(clean),
   }));
-// Featured projects come from config (title + screenshot); text comes from the site data.
+// Featured projects come from config (title + GIF tile); text comes from the site data.
 const projects = cfg.featured
   .map((f) => ({ ...allProjects.find((p) => p.title === f.title), ...f }))
-  .filter((p) => p.url && p.desc);
+  .filter((p) => p.url && p.tile);
 
-const recent = own.slice(0, cfg.maxRepos);
 
 // ---- theme (matches yust.dev) ----
 const C = {
@@ -103,12 +101,6 @@ const mono = (size, color, text, extra = {}) => el({ fontFamily: "GeistMono", fo
 const oneLine = { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" };
 const card = (style, children) =>
   el({ width: "100%", height: "100%", background: C.card, border: `1px solid ${C.line}`, borderRadius: 18, ...style }, children);
-const pill = (text, color = C.text) =>
-  el(
-    { border: `1px solid ${C.faint}`, borderRadius: 999, padding: "6px 14px", marginRight: 10 },
-    mono(15, color, text.toUpperCase(), { letterSpacing: 1.5 }),
-  );
-const arrow = (color = C.dim) => mono(30, color, "↗");
 const blink = (svg) =>
   svg.replace(
     new RegExp(`(<rect[^>]*fill="${C.accent}"[^>]*)\\/>`),
@@ -123,123 +115,43 @@ async function draw(name, h, tree, { w = W, post = (s) => s } = {}) {
 }
 
 // ---- cards ----
-const hero = await draw(
-  "hero",
-  460,
-  card({ background: C.bg, flexDirection: "column", justifyContent: "space-between", padding: `44px ${PAD + 8}px 40px` }, [
-    el({ justifyContent: "space-between", alignItems: "center" }, [
-      mono(20, C.dim, `~/${host(cfg.site.url)}`),
-      el({ alignItems: "center" }, [
-        el({ width: 10, height: 10, borderRadius: 999, background: C.accent, marginRight: 12 }),
-        mono(20, C.dim, cfg.location ?? ""),
-      ]),
-    ]),
-    el({ flexDirection: "column" }, [
-      el({ alignItems: "center" }, [
-        pixel(84, C.white, cfg.name, { letterSpacing: 2 }),
-        el({ width: 14, height: 76, background: C.accent, marginLeft: 18 }),
-      ]),
-      el({ marginTop: 18, alignItems: "center" }, [
-        mono(24, C.white, cfg.fullName),
-        mono(24, C.faint, "/", { margin: "0 16px" }),
-        mono(24, C.text, cfg.tagline),
-      ]),
-    ]),
-    el(
-      { borderTop: `1px solid ${C.line}`, paddingTop: 30, justifyContent: "space-between" },
-      stats.map(([label, n]) =>
-        el({ flexDirection: "column" }, [
-          pixel(40, C.white, fmt(n)),
-          pixel(14, C.dim, label, { fontWeight: 400, marginTop: 12, letterSpacing: 1 }),
-        ]),
-      ),
-    ),
+// Header row = one wide card + square icon cards, all the same height so they line up in one row.
+const ROW_H = 120;
+const header = await draw(
+  "header",
+  ROW_H,
+  card({ alignItems: "center", padding: "0 44px" }, [
+    pixel(40, C.white, cfg.name, { letterSpacing: 2 }),
+    el({ width: 8, height: 40, background: C.accent, marginLeft: 10 }),
+    el({ width: 1, height: 44, background: C.line, margin: "0 32px" }),
+    mono(30, C.white, cfg.greeting),
   ]),
-  { post: blink },
+  { w: 1245, post: blink },
 );
 
-const header = (name, label, count) =>
-  draw(
-    name,
-    96,
-    el({ width: "100%", height: "100%", alignItems: "center", padding: `0 ${PAD}px` }, [
-      el({ width: 12, height: 12, background: C.accent, marginRight: 18 }),
-      pixel(26, C.white, label, { letterSpacing: 2 }),
-      el({ flex: 1, height: 1, background: C.line, margin: "0 24px" }),
-      pixel(18, C.faint, String(count).padStart(2, "0")),
-    ]),
-  );
-
-const shot = (name) => `data:image/jpeg;base64,${readFileSync(`assets/shots/${name}.jpg`).toString("base64")}`;
-const projectCards = [];
-for (const [i, p] of projects.entries()) {
-  projectCards.push(
+const ICONS = {
+  linkedin:
+    "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
+  x: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z",
+};
+const iconSrc = (name, color) =>
+  `data:image/svg+xml;base64,${Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${color}" d="${ICONS[name]}"/></svg>`).toString("base64")}`;
+const socialCards = [];
+for (const s of cfg.social) {
+  socialCards.push(
     await draw(
-      `project-${i}`,
-      650,
-      card({ padding: 20, flexDirection: "column" }, [
-        { type: "img", props: { src: shot(p.image), width: W - 42, height: 470, style: { borderRadius: 10, objectFit: "cover" } } },
-        el({ flex: 1, flexDirection: "column", justifyContent: "center", padding: "0 16px" }, [
-          el({ alignItems: "center", justifyContent: "space-between" }, [
-            el({ alignItems: "center" }, [
-              pixel(18, C.faint, String(i + 1).padStart(2, "0"), { marginRight: 22 }),
-              pixel(36, C.white, p.title),
-              p.tag ? mono(16, C.accent, p.tag.toUpperCase(), { marginLeft: 22, letterSpacing: 1.5 }) : null,
-            ]),
-            el({ alignItems: "center" }, [mono(18, C.dim, host(p.url), { marginRight: 14 }), arrow()]),
-          ]),
-          mono(22, C.text, p.desc, { ...oneLine, marginLeft: 50, marginTop: 16 }),
-        ]),
+      `social-${s.icon}`,
+      ROW_H,
+      card({ alignItems: "center", justifyContent: "center" }, [
+        { type: "img", props: { src: iconSrc(s.icon, s.icon === "linkedin" ? C.accent : C.white), width: 52, height: 52 } },
       ]),
-    ),
-  );
-}
-
-const repoCards = [];
-for (const [i, r] of recent.entries()) {
-  repoCards.push(
-    await draw(
-      `repo-${i}`,
-      132,
-      card({ padding: `28px ${PAD}px`, flexDirection: "column", justifyContent: "space-between" }, [
-        el({ alignItems: "center", justifyContent: "space-between" }, [
-          pixel(26, C.white, r.name),
-          el({ alignItems: "center" }, [
-            r.language ? el({ width: 10, height: 10, borderRadius: 999, background: C.accent, marginRight: 10 }) : null,
-            mono(17, C.dim, [r.language, `${r.stargazers_count} stars`].filter(Boolean).join("   ")),
-          ]),
-        ]),
-        mono(20, C.text, clean(r.description ?? "-"), oneLine),
-      ]),
-    ),
-  );
-}
-
-const contactCards = [];
-for (const [i, l] of cfg.links.entries()) {
-  contactCards.push(
-    await draw(
-      `contact-${i}`,
-      64,
-      el(
-        {
-          width: "100%",
-          height: "100%",
-          alignItems: "center",
-          justifyContent: "center",
-          background: C.card,
-          border: `1px solid ${C.line}`,
-          borderRadius: 999,
-        },
-        [pixel(17, C.white, l.label.toUpperCase(), { letterSpacing: 2, marginRight: 10 }), mono(20, C.accent, "↗")],
-      ),
-      { w: 210 },
+      { w: ROW_H },
     ),
   );
 }
 
 // Ticker: two identical halves side by side, slid left by one half forever = seamless loop.
-const tickerItems = [...stats.map(([l, n]) => `${fmt(n)} ${l}`), ...new Set(projects.flatMap((p) => p.tech))].slice(0, 14);
+const tickerItems = [...stats.map(([l, n]) => `${fmt(n)} ${l}`), ...new Set(projects.flatMap((p) => p.tech ?? []))].slice(0, 14);
 const half = el(
   { width: W * 2, flexShrink: 0, alignItems: "center", justifyContent: "space-around" },
   tickerItems.flatMap((t, i) => [
@@ -266,37 +178,24 @@ const ticker = await draw(
 );
 
 // ---- readme: images only, alt text carries the words for screen readers ----
+// Tiles in assets/tiles/*.gif are cut from the project videos (1920x1080) with ffmpeg; they are not regenerated here.
 const img = (src, alt, attrs = 'width="100%"') => `<img src="${src}" ${attrs} alt="${esc(alt)}" />`;
 const link = (href, inner) => `<a href="${href}">${inner}</a>`;
 const block = (lines) => ["<p align=\"center\">", ...lines, "</p>", ""];
+const tile = (p) => link(p.url, img(`assets/tiles/${p.tile}.gif`, `${p.title}: ${p.desc ?? ""}`, 'width="49%"'));
+const rows = [];
+for (let i = 0; i < projects.length; i += 2) rows.push(projects.slice(i, i + 2).map(tile).join(" ") + "<br>");
 
 const md = [
   "<!-- Generated by scripts/gen_profile.mjs. Edit profile.config.json instead. -->",
   "",
-  ...block([img(hero, `${cfg.fullName} (${cfg.name}), ${cfg.tagline}. ${stats.map(([l, n]) => `${fmt(n)} ${l.toLowerCase()}`).join(", ")}`)]),
-];
-if (projectCards.length) {
-  md.push(
-    ...block([
-      img(await header("h-projects", "PROJECTS", projectCards.length), "Projects") + "<br>",
-      ...projectCards.map((src, i) => link(projects[i].url, img(src, `${projects[i].title}: ${projects[i].desc}`)) + "<br>"),
-    ]),
-  );
-}
-if (repoCards.length) {
-  md.push(
-    ...block([
-      img(await header("h-recent", "RECENTLY PUSHED", repoCards.length), "Recently pushed") + "<br>",
-      ...repoCards.map((src, i) => link(recent[i].html_url, img(src, `${recent[i].name}: ${recent[i].description ?? ""}`)) + "<br>"),
-    ]),
-  );
-}
-md.push(
+  // no whitespace between the header images, or the row wraps
   ...block([
-    img(await header("h-contact", "FIND ME", contactCards.length), "Find me") + "<br>",
-    ...contactCards.map((src, i) => link(cfg.links[i].url, img(src, cfg.links[i].label, 'height="40"'))),
+    link(cfg.site.url, img(header, `${cfg.greeting}. I'm ${cfg.fullName} (${cfg.name}), ${cfg.tagline}.`, 'width="83%"')) +
+      cfg.social.map((s, i) => link(s.url, img(socialCards[i], s.label, 'width="8%"'))).join(""),
   ]),
-  ...block([img(ticker, "Stats and stack ticker")]),
-);
+  ...block(rows),
+  ...block([img(ticker, `Stats: ${stats.map(([l, n]) => `${fmt(n)} ${l.toLowerCase()}`).join(", ")}`)]),
+];
 writeFileSync("README.md", md.join("\n"));
-console.log(`projects=${projects.length} repos=${recent.length}`, stats.map((s) => s.join("=")).join(" "));
+console.log(`projects=${projects.length}`, stats.map((s) => s.join("=")).join(" "));

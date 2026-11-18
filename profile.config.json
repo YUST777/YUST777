@@ -9,39 +9,39 @@
     "url": "https://yust.dev",
     "followersApi": "https://www.yust.dev/api/linkedin-followers"
   },
-  "maxRepos": 3,
-  "links": [
-    {
-      "label": "yust.dev",
-      "url": "https://yust.dev"
-    },
-    {
-      "label": "LinkedIn",
-      "url": "https://www.linkedin.com/in/yousefmsm1/"
-    },
-    {
-      "label": "X",
-      "url": "https://x.com/YUST777"
-    },
-    {
-      "label": "Email",
-      "url": "mailto:yousfmsm@hotmail.com"
-    }
-  ],
   "fullName": "Yousef Mohamed Salah",
   "featured": [
     {
       "title": "Verdict",
-      "image": "verdict"
+      "tile": "verdict"
     },
     {
       "title": "ICPCHUE",
-      "image": "icpchue",
+      "tile": "icpchue",
       "url": "https://icpchue.com"
     },
     {
-      "title": "Sast",
-      "image": "sast"
+      "title": "Waddle",
+      "tile": "waddle",
+      "url": "https://github.com/YUST777/waddle",
+      "desc": "Learn web development five minutes a day, with a duck."
+    },
+    {
+      "title": "SWRMZ",
+      "tile": "swrmz"
+    }
+  ],
+  "greeting": "Hey! Nice to meet you",
+  "social": [
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/yousefmsm1/",
+      "icon": "linkedin"
+    },
+    {
+      "label": "X",
+      "url": "https://x.com/YUST777",
+      "icon": "x"
     }
   ]
 }
