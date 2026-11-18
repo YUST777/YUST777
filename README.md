@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-<img src="assets/cards/hero.svg" width="100%" alt="Yousef Mohamed Salah, full-stack developer. 2,569 commits, 121 stars, 25 repos, 24 github, 2,115 linkedin" />
+<img src="assets/cards/hero.svg" width="100%" alt="Yousef Mohamed Salah, full-stack developer. 1,692 commits, 121 stars, 25 repos, 24 github, 2,115 linkedin" />
 </p>
 
 <p align="center">
