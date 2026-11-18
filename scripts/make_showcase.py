@@ -1,5 +1,5 @@
-# Builds assets/showcase.png: two desktop screenshots stacked on the left, a tall phone on the right,
-# each on its own gradient panel. Run: python3 scripts/make_showcase.py
+# Builds three showcase panels (separate images so each links to its own project):
+# assets/showcase-swrmz.png and showcase-icpchue.png (1064x442) stack on the left, showcase-waddle.png (520x900) sits right. Run: python3 scripts/make_showcase.py
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 import textwrap
 
@@ -63,12 +63,11 @@ def label(d, x, y, h, title, desc, ink, wrap):
     d.multiline_text((x, y + 60), body, font=BF, fill=ink + (190,), spacing=8)
 
 
-canvas = Image.new("RGBA", (W, H), (0, 0, 0, 0))
 half = (H - GAP) // 2
 swrmz = Image.open(f"{SHOTS}/swrmz_app.jpg")
 icpc = Image.open(f"{SHOTS}/icpchue_dashboard.jpg")
-canvas.alpha_composite(panel(LEFT_W, half, (120, 18, 28), (20, 6, 10), swrmz, 34, "SWRMZ", "A swarm of AI agents that hunts the holes in your stack.", (255, 255, 255)), (0, 0))
-canvas.alpha_composite(panel(LEFT_W, half, (250, 196, 40), (232, 110, 20), icpc, 34, "ICPCHUE", "Training platform and online judge for competitive programmers.", (20, 14, 6)), (0, half + GAP))
+panel(LEFT_W, half, (120, 18, 28), (20, 6, 10), swrmz, 34, "SWRMZ", "A swarm of AI agents that hunts the holes in your stack.", (255, 255, 255)).save("assets/showcase-swrmz.png", optimize=True)
+panel(LEFT_W, half, (250, 196, 40), (232, 110, 20), icpc, 34, "ICPCHUE", "Training platform and online judge for competitive programmers.", (20, 14, 6)).save("assets/showcase-icpchue.png", optimize=True)
 
 # phone: the screen as rendered in the waddle video (with its notch), wrapped in a dark bezel
 screen = Image.open(WADDLE_FRAME).convert("RGB").crop((1182, 62, 1620, 1015))
@@ -86,7 +85,6 @@ ImageDraw.Draw(shadow).rounded_rectangle((px, py + 14, px + ph_w, py + ph_h + 14
 right.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(22)))
 right.alpha_composite(phone, (px, py))
 label(ImageDraw.Draw(right), 42, 40, H, "Waddle", "Learn web dev five minutes a day, with a duck.", (40, 20, 6), 27)
-canvas.alpha_composite(rounded(right, R), (LEFT_W + GAP, 0))
+rounded(right, R).save("assets/showcase-waddle.png", optimize=True)
 
-canvas.save("assets/showcase.png", optimize=True)
-print("assets/showcase.png", canvas.size)
+print("assets/showcase-{swrmz,icpchue,waddle}.png")

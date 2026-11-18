@@ -20,11 +20,23 @@
       "icon": "x"
     }
   ],
-  "projects": {
-    "image": "assets/showcase.png",
-    "alt": "SWRMZ, ICPCHUE and the Waddle mobile app",
-    "url": "https://yust.dev"
-  },
+  "projects": [
+    {
+      "image": "assets/showcase-waddle.png",
+      "url": "https://github.com/YUST777/waddle",
+      "alt": "Waddle: learn web dev five minutes a day, with a duck"
+    },
+    {
+      "image": "assets/showcase-swrmz.png",
+      "url": "https://swrmz.tech",
+      "alt": "SWRMZ: a swarm of AI agents that hunts the holes in your stack"
+    },
+    {
+      "image": "assets/showcase-icpchue.png",
+      "url": "https://icpchue.com",
+      "alt": "ICPCHUE: training platform and online judge for competitive programmers"
+    }
+  ],
   "location": "Egypt",
   "stack": [
     "siNextdotjs",

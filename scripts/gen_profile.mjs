@@ -295,7 +295,12 @@ const md = [
   "",
   ...block([img(hero, `${cfg.fullName}, ${cfg.tagline}. ${stats.map(([l, n]) => `${fmt(n)} ${l.toLowerCase()}`).join(", ")}`)]),
   ...block([img(stack, `Stack: ${cfg.stack.map((k) => icons[k].title).join(", ")}`)]),
-  ...block([link(cfg.projects.url, img(cfg.projects.image, cfg.projects.alt))]),
+  // Waddle (tall) floats right; SWRMZ and ICPCHUE stack on the left. Widths match the 1064/16/520 px panel layout.
+  ...block([
+    link(cfg.projects[0].url, img(cfg.projects[0].image, cfg.projects[0].alt, 'width="32.5%" align="right"')),
+    link(cfg.projects[1].url, img(cfg.projects[1].image, cfg.projects[1].alt, 'width="66.5%"')) + "<br>",
+    link(cfg.projects[2].url, img(cfg.projects[2].image, cfg.projects[2].alt, 'width="66.5%"')),
+  ]).map((l) => (l === '<p align="center">' ? "<p>" : l)),
   ...block([
     link(
       `${cfg.site.url}/hacks`,
