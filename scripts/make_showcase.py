@@ -71,16 +71,50 @@ canvas.alpha_composite(panel(LEFT_W, half, (120, 18, 28), (20, 6, 10), swrmz, 34
 canvas.alpha_composite(panel(LEFT_W, half, (250, 196, 40), (232, 110, 20), icpc, 34, "ICPCHUE", "Training platform and online judge for competitive programmers.", (20, 14, 6)), (0, half + GAP))
 
 # phone: crop just the app screen out of the waddle video frame (below the notch, inside the bezel)
-screen = Image.open(WADDLE_FRAME).convert("RGB").crop((1196, 132, 1606, 968))
+screen = Image.open(WADDLE_FRAME).convert("RGB").crop((1196, 132, 1606, 963))
 PW, TOP = 520, 180
 ph_h = H - TOP - 40
-BZ, PR = 11, 54  # bezel width, outer corner radius; screen radius = PR - BZ keeps the bezel even
-ph_w = round(screen.width * (ph_h - 2 * BZ) / screen.height) + 2 * BZ
-phone = Image.new("RGBA", (ph_w, ph_h), (0, 0, 0, 0))
-phone.paste((58, 58, 62, 255), (0, 0), rr_mask((ph_w, ph_h), PR))  # thin metal rim
-body = Image.new("RGBA", (ph_w, ph_h), (12, 12, 14, 255))
-phone.paste(body, (0, 0), rr_mask((ph_w, ph_h), PR - 2, inset=2))
-phone.alpha_composite(rounded(screen.resize((ph_w - 2 * BZ, ph_h - 2 * BZ), Image.LANCZOS), PR - BZ), (BZ, BZ))
+
+
+def make_phone(screen, h, k=4):
+    """Titanium-frame phone drawn at k x scale, then downsampled for crisp anti-aliased edges."""
+    rim, bez, R0 = 5, 9, 60  # titanium rim width, black bezel width, outer radius
+    inset = rim + bez
+    w = round(screen.width * (h - 2 * inset) / screen.height) + 2 * inset
+    W_, H_, B = w * k, h * k, 4 * k  # B = room for side buttons
+    img = Image.new("RGBA", (W_ + 2 * B, H_), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    metal = (176, 176, 182, 255)
+    # side buttons: action + volume on the left, power on the right
+    for y0, y1 in ((0.17, 0.22), (0.26, 0.34), (0.37, 0.45)):
+        d.rounded_rectangle((0, y0 * H_, B + 2 * k, y1 * H_), 2 * k, fill=metal)
+    d.rounded_rectangle((W_ + B - 2 * k, 0.28 * H_, W_ + 2 * B, 0.40 * H_), 2 * k, fill=metal)
+    # titanium frame: horizontal light-dark-light gradient, like brushed metal catching light
+    frame = Image.new("RGB", (5, 1))
+    frame.putdata([(214, 214, 220), (150, 150, 158), (120, 120, 128), (150, 150, 158), (214, 214, 220)])
+    frame = frame.resize((W_, H_), Image.BICUBIC).convert("RGBA")
+    m = Image.new("L", (W_, H_), 0)
+    ImageDraw.Draw(m).rounded_rectangle((0, 0, W_ - 1, H_ - 1), R0 * k, fill=255)
+    img.paste(frame, (B, 0), m)
+    d.rounded_rectangle((B + 1 * k, 1 * k, B + W_ - 1 * k, H_ - 1 * k), (R0 - 1) * k, outline=(235, 235, 240, 255), width=k)  # edge highlight
+    d.rounded_rectangle((B + rim * k, rim * k, B + W_ - rim * k, H_ - rim * k), (R0 - rim) * k, fill=(6, 6, 7, 255))  # glass bezel
+    sr = (R0 - inset) * k
+    scr = screen.resize((W_ - 2 * inset * k, H_ - 2 * inset * k), Image.LANCZOS).convert("RGBA")
+    sm = Image.new("L", scr.size, 0)
+    ImageDraw.Draw(sm).rounded_rectangle((0, 0, scr.width - 1, scr.height - 1), sr, fill=255)
+    img.paste(scr, (B + inset * k, inset * k), sm)
+    # faint diagonal glass sheen over the screen
+    sheen = Image.new("L", (2, 2))
+    sheen.putdata([22, 0, 0, 0])
+    sheen = sheen.resize(scr.size, Image.BILINEAR)
+    sheen.paste(0, (0, 0), Image.eval(sm, lambda v: 255 - v))
+    img.paste((255, 255, 255, 255), (B + inset * k, inset * k), sheen)
+    return img.resize((img.width // k, img.height // k), Image.LANCZOS), R0
+
+
+phone, PR = make_phone(screen, ph_h)
+ph_w = phone.width
+
 right = gradient(PW, H, (255, 214, 170), (240, 140, 70)).convert("RGBA")
 shadow = Image.new("RGBA", right.size, (0, 0, 0, 0))
 px, py = (PW - ph_w) // 2, TOP
