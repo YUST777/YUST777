@@ -2,6 +2,7 @@
   "user": "YUST777",
   "name": "yousefdev",
   "tagline": "full-stack  ·  ai  ·  security",
+  "location": "Egypt",
   "bio": "Full-stack developer building web platforms, AI tools and security products. Level 3 Cybersecurity & AI student at Horus University, Egypt. Three-time hackathon winner.",
   "site": {
     "repo": "YUST777/yust.dev",
@@ -13,9 +14,21 @@
   "maxPosts": 3,
   "maxRepos": 3,
   "links": [
-    { "label": "yust.dev", "url": "https://yust.dev" },
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/yousefmsm1/" },
-    { "label": "X", "url": "https://x.com/YUST777" },
-    { "label": "Email", "url": "mailto:yousfmsm@hotmail.com" }
+    {
+      "label": "yust.dev",
+      "url": "https://yust.dev"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/yousefmsm1/"
+    },
+    {
+      "label": "X",
+      "url": "https://x.com/YUST777"
+    },
+    {
+      "label": "Email",
+      "url": "mailto:yousfmsm@hotmail.com"
+    }
   ]
 }
