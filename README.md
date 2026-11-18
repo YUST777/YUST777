@@ -5,10 +5,5 @@
 </p>
 
 <p align="center">
-<a href="https://verdict.run"><img src="assets/tiles/verdict.gif" width="49%" alt="Verdict: The Ultimate Competitive Programming Platform." /></a> <a href="https://icpchue.com"><img src="assets/tiles/icpchue.gif" width="49%" alt="ICPCHUE: Hardened, sandboxed online judge platform." /></a><br>
-<a href="https://github.com/YUST777/waddle"><img src="assets/tiles/waddle.gif" width="49%" alt="Waddle: Learn web development five minutes a day, with a duck." /></a> <a href="https://swrmz.tech"><img src="assets/tiles/swrmz.gif" width="49%" alt="SWRMZ: Cooperative Swarm AI Security agents." /></a><br>
-</p>
-
-<p align="center">
-<img src="assets/cards/ticker.svg" width="100%" alt="Stats: 1,687 commits, 121 stars, 25 repos, 24 github, 2,115 linkedin" />
+<a href="https://yust.dev"><img src="assets/projects.gif" width="100%" alt="Verdict, ICPCHUE, Waddle and SWRMZ in action" /></a>
 </p>

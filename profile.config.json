@@ -2,35 +2,10 @@
   "user": "YUST777",
   "name": "YUST",
   "tagline": "full-stack developer",
-  "location": "Egypt",
   "site": {
-    "repo": "YUST777/yust.dev",
-    "branch": "main",
-    "url": "https://yust.dev",
-    "followersApi": "https://www.yust.dev/api/linkedin-followers"
+    "url": "https://yust.dev"
   },
   "fullName": "Yousef Mohamed Salah",
-  "featured": [
-    {
-      "title": "Verdict",
-      "tile": "verdict"
-    },
-    {
-      "title": "ICPCHUE",
-      "tile": "icpchue",
-      "url": "https://icpchue.com"
-    },
-    {
-      "title": "Waddle",
-      "tile": "waddle",
-      "url": "https://github.com/YUST777/waddle",
-      "desc": "Learn web development five minutes a day, with a duck."
-    },
-    {
-      "title": "SWRMZ",
-      "tile": "swrmz"
-    }
-  ],
   "greeting": "Hey! Nice to meet you",
   "social": [
     {
@@ -43,5 +18,10 @@
       "url": "https://x.com/YUST777",
       "icon": "x"
     }
-  ]
+  ],
+  "projects": {
+    "gif": "assets/projects.gif",
+    "alt": "Verdict, ICPCHUE, Waddle and SWRMZ in action",
+    "url": "https://yust.dev"
+  }
 }
