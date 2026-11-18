@@ -179,7 +179,12 @@ const stack = await draw(
 );
 
 // Hackathon chips: one image per win so each links to its blog post. Widths must add to < 100% in one row.
-const MEDAL = { 1: ["#facc15", "1ST"], 2: ["#d4d4d8", "2ND"], 3: ["#cd7f32", "3RD"] };
+// Trophy is the PixelTrophy SVG from yust.dev (src/routes/_main/hacks.tsx), colored by place.
+const MEDAL = { 1: ["#FFD700", "1st"], 2: ["#C0C0C0", "2nd"], 3: ["#CD7F32", "3rd"] };
+const trophy = (color) =>
+  `data:image/svg+xml;base64,${Buffer.from(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 8" shape-rendering="crispEdges"><path fill="${color}" d="M1 0h5v1H1z M0 1h7v2H0z M1 3h5v1H1z M2 4h3v1H2z M3 5h1v1H3z M2 6h3v1H2z M1 7h5v1H1z"/></svg>`,
+  ).toString("base64")}`;
 const hackCards = [];
 for (const [i, hk] of cfg.hackathons.entries()) {
   const [color, label] = MEDAL[hk.place];
@@ -188,13 +193,14 @@ for (const [i, hk] of cfg.hackathons.entries()) {
       `hackathon-${i}`,
       400,
       150,
-      card({ alignItems: "center", padding: "0 28px" }, [
-        el({ width: 64, height: 64, borderRadius: 999, border: `3px solid ${color}`, alignItems: "center", justifyContent: "center", marginRight: 22, flexShrink: 0 }, [
-          pixel(17, color, label),
-        ]),
+      card({ alignItems: "center", padding: "0 30px" }, [
+        { type: "img", props: { src: trophy(color), width: 49, height: 56, style: { marginRight: 26, flexShrink: 0 } } },
         el({ flexDirection: "column" }, [
           el({ fontFamily: "Geist", fontWeight: 600, fontSize: 26, color: C.white }, hk.event),
-          el({ fontFamily: "Geist", fontSize: 18, color: C.text, marginTop: 6 }, `${hk.project} · ${hk.date}`),
+          el({ fontFamily: "Geist", fontSize: 18, color: C.text, marginTop: 6 }, [
+            el({ color, fontWeight: 600, marginRight: 8 }, `${label} place`),
+            `· ${hk.project}`,
+          ]),
         ]),
       ]),
     ),
