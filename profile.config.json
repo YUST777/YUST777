@@ -3,7 +3,8 @@
   "name": "YUST",
   "tagline": "full-stack developer",
   "site": {
-    "url": "https://yust.dev"
+    "url": "https://yust.dev",
+    "followersApi": "https://www.yust.dev/api/linkedin-followers"
   },
   "fullName": "Yousef Mohamed Salah",
   "greeting": "Hey! Nice to meet you",
@@ -23,5 +24,6 @@
     "image": "assets/showcase.png",
     "alt": "SWRMZ, ICPCHUE and the Waddle mobile app",
     "url": "https://yust.dev"
-  }
+  },
+  "location": "Egypt"
 }
