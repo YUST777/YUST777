@@ -10,5 +10,5 @@
 </p>
 
 <p align="center">
-<img src="assets/cards/ticker.svg" width="100%" alt="Stats: 2,564 commits, 121 stars, 25 repos, 24 github, 2,115 linkedin" />
+<img src="assets/cards/ticker.svg" width="100%" alt="Stats: 1,687 commits, 121 stars, 25 repos, 24 github, 2,115 linkedin" />
 </p>
