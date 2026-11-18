@@ -130,6 +130,13 @@ for (const s of cfg.social) {
 const pixel = (size, color, text, extra = {}) =>
   el({ fontFamily: "Silkscreen", fontWeight: 700, fontSize: size, color, ...extra }, text);
 const mono = (size, color, text, extra = {}) => el({ fontFamily: "GeistMono", fontSize: size, color, ...extra }, text);
+// Near-identical to the accent so it can be told apart from the cursor in the SVG output.
+const LIVE_DOT = "#60a5fb";
+const pulse = (svg) =>
+  svg.replace(
+    /<(rect|path)([^>]*fill="#60a5fb"[^>]*)\/>/,
+    '<$1$2><animate attributeName="opacity" values="1;.25;1" dur="2s" repeatCount="indefinite"/></$1>',
+  );
 const hero = await draw(
   "hero",
   1200,
@@ -138,7 +145,7 @@ const hero = await draw(
     el({ justifyContent: "space-between", alignItems: "center" }, [
       mono(20, C.dim, `~/${host(cfg.site.url)}`),
       el({ alignItems: "center" }, [
-        el({ width: 10, height: 10, borderRadius: 999, background: C.accent, marginRight: 12 }),
+        el({ width: 10, height: 10, borderRadius: 999, background: LIVE_DOT, marginRight: 12 }),
         mono(20, C.dim, cfg.location),
       ]),
     ]),
@@ -163,7 +170,7 @@ const hero = await draw(
       ),
     ),
   ]),
-  blink,
+  (svg) => pulse(blink(svg)),
 );
 
 // Stack strip: monochrome logos only.
@@ -175,12 +182,19 @@ const stack = await draw(
     ...cfg.stack.map((k) => ({
       type: "img",
       props: {
-        src: `data:image/svg+xml;base64,${Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${C.text}" d="${icons[k].path}"/></svg>`).toString("base64")}`,
+        src: `data:image/svg+xml;base64,${Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${C.white}" d="${icons[k].path}"/></svg>`).toString("base64")}`,
         width: 44,
         height: 44,
       },
     })),
   ]),
+  // each logo brightens in turn, then the row rests
+  (svg) => {
+    let i = 0;
+    return svg
+      .replace(/<image /g, () => `<image class="logo" style="animation-delay:${(i++ * 0.35).toFixed(2)}s" `)
+      .replace(/(<svg[^>]*>)/, `$1<style>.logo{opacity:.5;animation:lit 4.9s ease-in-out infinite}@keyframes lit{0%,24%,100%{opacity:.5}8%{opacity:1}}</style>`);
+  },
 );
 
 // Hackathon chips: one image per win so each links to its blog post. Widths must add to < 100% in one row.
