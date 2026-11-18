@@ -190,27 +190,27 @@ const trophy = (color) =>
   `data:image/svg+xml;base64,${Buffer.from(
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 8" shape-rendering="crispEdges"><path fill="${color}" d="M1 0h5v1H1z M0 1h7v2H0z M1 3h5v1H1z M2 4h3v1H2z M3 5h1v1H3z M2 6h3v1H2z M1 7h5v1H1z"/></svg>`,
   ).toString("base64")}`;
-const hackCards = [];
-for (const [i, hk] of cfg.hackathons.entries()) {
-  const [color, label] = MEDAL[hk.place];
-  hackCards.push(
-    await draw(
-      `hackathon-${i}`,
-      400,
-      150,
-      card({ alignItems: "center", padding: "0 30px" }, [
-        { type: "img", props: { src: trophy(color), width: 49, height: 56, style: { marginRight: 26, flexShrink: 0 } } },
+// All wins in one card (separate chips looked like mismatched widgets side by side).
+const hackathons = await draw(
+  "hackathons",
+  1200,
+  150,
+  card({ alignItems: "center", justifyContent: "space-around", padding: "0 32px" }, [
+    ...cfg.hackathons.map((hk) => {
+      const [color, label] = MEDAL[hk.place];
+      return el({ alignItems: "center" }, [
+        { type: "img", props: { src: trophy(color), width: 42, height: 48, style: { marginRight: 22, flexShrink: 0 } } },
         el({ flexDirection: "column" }, [
-          el({ fontFamily: "Geist", fontWeight: 600, fontSize: 26, color: C.white }, hk.event),
-          el({ fontFamily: "Geist", fontSize: 18, color: C.text, marginTop: 6 }, [
+          el({ fontFamily: "Geist", fontWeight: 600, fontSize: 25, color: C.white }, hk.event),
+          el({ fontFamily: "Geist", fontSize: 17, color: C.text, marginTop: 6 }, [
             el({ color, fontWeight: 600, marginRight: 8 }, `${label} place`),
             `· ${hk.project}`,
           ]),
         ]),
-      ]),
-    ),
-  );
-}
+      ]);
+    }),
+  ]),
+);
 
 // Contribution heatmap in the site's blue instead of GitHub green.
 const LEVEL = { NONE: "#18181b", FIRST_QUARTILE: "#1e3a8a", SECOND_QUARTILE: "#2563eb", THIRD_QUARTILE: "#3b82f6", FOURTH_QUARTILE: "#93c5fd" };
@@ -260,9 +260,10 @@ const md = [
   ...block([img(stack, `Stack: ${cfg.stack.map((k) => icons[k].title).join(", ")}`)]),
   ...block([link(cfg.projects.url, img(cfg.projects.image, cfg.projects.alt))]),
   ...block([
-    cfg.hackathons
-      .map((hk, i) => link(hk.url, img(hackCards[i], `${MEDAL[hk.place][1]} place at ${hk.event} with ${hk.project}, ${hk.date}`, 'width="33%"')))
-      .join(""),
+    link(
+      `${cfg.site.url}/hacks`,
+      img(hackathons, `Hackathons: ${cfg.hackathons.map((hk) => `${MEDAL[hk.place][1]} place at ${hk.event} with ${hk.project}`).join("; ")}`),
+    ),
   ]),
   ...(contrib ? block([img(contrib, `${calendar.totalContributions} contributions in the last year`)]) : []),
   // no whitespace between the header images, or the row wraps
