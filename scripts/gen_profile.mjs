@@ -82,9 +82,13 @@ const blink = (svg) =>
 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
+// The content hash goes in the filename: raw.githubusercontent.com caches each path for minutes,
+// so a changed card needs a new path to show up right away.
 async function draw(name, w, h, tree, post = (s) => s) {
-  writeFileSync(`${OUT}/${name}.svg`, post(await satori(tree, { width: w, height: h, fonts })));
-  return `${OUT}/${name}.svg`;
+  const svg = post(await satori(tree, { width: w, height: h, fonts }));
+  const path = `${OUT}/${name}.${createHash("sha1").update(svg).digest("hex").slice(0, 8)}.svg`;
+  writeFileSync(path, svg);
+  return path;
 }
 
 // Header row = one wide card + square icon cards, all the same height so they line up in one row.
@@ -245,9 +249,7 @@ if (calendar) {
 }
 
 // ---- readme ----
-// ?v=<content hash> busts GitHub's image cache whenever a card actually changes.
-const ver = (src) => `${src}?v=${createHash("sha1").update(readFileSync(src)).digest("hex").slice(0, 8)}`;
-const img = (src, alt, attrs = 'width="100%"') => `<img src="${ver(src)}" ${attrs} alt="${esc(alt)}" />`;
+const img = (src, alt, attrs = 'width="100%"') => `<img src="${src}" ${attrs} alt="${esc(alt)}" />`;
 const link = (href, inner) => `<a href="${href}">${inner}</a>`;
 const block = (lines) => ['<p align="center">', ...lines, "</p>", ""];
 
