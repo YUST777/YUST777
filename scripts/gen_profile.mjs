@@ -2,6 +2,7 @@
 // (GitHub API and the yust.dev LinkedIn followers API).
 // The README is images only: the stats banner, one projects showcase image, and a footer row (greeting + social icons).
 // assets/showcase.png is built by scripts/make_showcase.py and is not regenerated here.
+import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import satori from "satori";
 import * as icons from "simple-icons";
@@ -244,7 +245,9 @@ if (calendar) {
 }
 
 // ---- readme ----
-const img = (src, alt, attrs = 'width="100%"') => `<img src="${src}" ${attrs} alt="${esc(alt)}" />`;
+// ?v=<content hash> busts GitHub's image cache whenever a card actually changes.
+const ver = (src) => `${src}?v=${createHash("sha1").update(readFileSync(src)).digest("hex").slice(0, 8)}`;
+const img = (src, alt, attrs = 'width="100%"') => `<img src="${ver(src)}" ${attrs} alt="${esc(alt)}" />`;
 const link = (href, inner) => `<a href="${href}">${inner}</a>`;
 const block = (lines) => ['<p align="center">', ...lines, "</p>", ""];
 
