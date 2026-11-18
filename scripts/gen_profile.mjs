@@ -247,8 +247,8 @@ if (calendar) {
       cells.push(`<rect class="c" x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="4" fill="${LEVEL[d.contributionLevel]}" style="animation-delay:${(wi * 0.03 + di * 0.02).toFixed(2)}s"/>`);
     });
   });
-  // cells sweep in left to right on load; the busiest ones keep a slow glow
-  const style = `<style>.c{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .5s cubic-bezier(.3,1.6,.5,1) forwards}@keyframes pop{0%{opacity:0;transform:scale(.3)}100%{opacity:1;transform:scale(1)}}rect[fill="${LEVEL.FOURTH_QUARTILE}"]{animation:pop .5s cubic-bezier(.3,1.6,.5,1) forwards,glow 2.4s ease-in-out 2s infinite}@keyframes glow{50%{opacity:.45}}</style>`;
+  // cells pop in left to right on load, then a wave sweeps across every 5s so there is motion whenever it is seen
+  const style = `<style>.c{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .5s cubic-bezier(.3,1.6,.5,1) forwards,wave 5s ease-in-out 2.2s infinite}@keyframes pop{0%{opacity:0;transform:scale(.3)}100%{opacity:1;transform:scale(1)}}@keyframes wave{0%,14%,100%{opacity:1;transform:scale(1)}6%{opacity:.35;transform:scale(.72)}}</style>`;
   contrib = await draw(
     "contributions",
     1200,
@@ -271,7 +271,8 @@ if (calendar) {
 }
 
 // ---- readme ----
-const img = (src, alt, attrs = 'width="100%"') => `<img src="${src}" ${attrs} alt="${esc(alt)}" />`;
+// loading="lazy": below-the-fold cards load when scrolled near, so their animations start on arrival.
+const img = (src, alt, attrs = 'width="100%"') => `<img src="${src}" ${attrs} loading="lazy" alt="${esc(alt)}" />`;
 const link = (href, inner) => `<a href="${href}">${inner}</a>`;
 const block = (lines) => ['<p align="center">', ...lines, "</p>", ""];
 
