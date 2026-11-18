@@ -1,6 +1,7 @@
 # Builds assets/showcase.png: two desktop screenshots stacked on the left, a tall phone on the right,
 # each on its own gradient panel. Run: python3 scripts/make_showcase.py
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
+import textwrap
 
 SHOTS = "/home/yousefmsm1/Desktop/mostqel/screenshots/raw"
 WADDLE_FRAME = "/tmp/waddle_frame.png"  # ffmpeg -ss 12 -i waddle_showcase_16x9.mp4 -frames:v 1 /tmp/waddle_frame.png
@@ -27,16 +28,24 @@ def rounded(img, r):
     return out
 
 
-def panel(w, h, top, bottom, shot, pad):
+def panel(w, h, top, bottom, shot, pad, title, desc, ink):
     bg = gradient(w, h, top, bottom).convert("RGBA")
     s = shot.copy()
-    s.thumbnail((w - 2 * pad, h - 2 * pad), Image.LANCZOS)
+    s.thumbnail((w - 360 - pad, h - 2 * pad), Image.LANCZOS)  # leave the left side for the label
     s = rounded(s.convert("RGB"), 12)
-    x, y = (w - s.width) // 2, (h - s.height) // 2
+    x, y = w - pad - s.width, (h - s.height) // 2
     shadow = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     ImageDraw.Draw(shadow).rounded_rectangle((x, y + 10, x + s.width, y + s.height + 10), 12, fill=(0, 0, 0, 140))
     bg.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(18)))
     bg.alpha_composite(s, (x, y))
+    d = ImageDraw.Draw(bg)
+    tf = ImageFont.truetype("assets/fonts/silkscreen-700.ttf", 34)
+    bf = ImageFont.truetype("assets/fonts/GeistMono-Regular.ttf", 19)
+    body = "\n".join(textwrap.wrap(desc, 24))
+    th = 34 + 22 + d.multiline_textbbox((0, 0), body, font=bf, spacing=8)[3]
+    ty = (h - th) // 2
+    d.text((pad + 8, ty), title, font=tf, fill=ink)
+    d.multiline_text((pad + 8, ty + 56), body, font=bf, fill=ink + (200,), spacing=8)
     return rounded(bg, R)
 
 
@@ -44,8 +53,8 @@ canvas = Image.new("RGBA", (W, H), (0, 0, 0, 0))
 half = (H - GAP) // 2
 swrmz = Image.open(f"{SHOTS}/swrmz_app.jpg")
 icpc = Image.open(f"{SHOTS}/icpchue_dashboard.jpg")
-canvas.alpha_composite(panel(LEFT_W, half, (120, 18, 28), (20, 6, 10), swrmz, 34), (0, 0))
-canvas.alpha_composite(panel(LEFT_W, half, (250, 196, 40), (232, 110, 20), icpc, 34), (0, half + GAP))
+canvas.alpha_composite(panel(LEFT_W, half, (120, 18, 28), (20, 6, 10), swrmz, 34, "SWRMZ", "A swarm of AI agents that hunts the holes in your stack.", (255, 255, 255)), (0, 0))
+canvas.alpha_composite(panel(LEFT_W, half, (250, 196, 40), (232, 110, 20), icpc, 34, "ICPCHUE", "Training platform and online judge for competitive programmers.", (20, 14, 6)), (0, half + GAP))
 
 # phone: crop the screen out of the waddle video frame and draw our own bezel
 screen = Image.open(WADDLE_FRAME).convert("RGB").crop((1182, 62, 1620, 1015))
