@@ -1,49 +1,39 @@
-![Banner](./banner.jpg)
+<img src="./banner.svg" alt="yousefdev" width="100%">
 
-# Hi, I'm Yousef 👋
+Full-stack developer building web platforms, AI tools and security products. Level 3 Cybersecurity & AI student at Horus University, Egypt. Three-time hackathon winner.
 
-**Full-Stack & AI Developer** · **L3 Cybersecurity & AI Student** · **3x Hackathon Winner** · Egypt
+&nbsp;
 
-I build web platforms, admin systems and AI tools that people actually use — from a competitive programming platform with 500+ users to an exam-management system running at an engineering institute.
+**Projects**
 
-**💼 Open to freelance work:** web platforms & SaaS MVPs · admin dashboards · AI integration (RAG, chatbots, agents) · security audits
+- [Verdict](https://verdict.run): The Ultimate Competitive Programming Platform.
+- [Sast](https://sast.tech): Autonomous AI Security Agent.
+- [Acolite](https://acolite.xyz): A polished talent platform frontend built for high-velocity teams.
+- [Topy](https://topy.yust.dev): A landing page for a video editor and motion graphics artist.
+- [SpaceWorth](https://spaceworth.site): Multimodal AI Real Estate Valuation Engine & CAD Floor-Plan OCR.
+- [10K Runner](https://10krunner.fun): Infinite runner game that makes you EARN & fun.
 
-![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Tailwind](https://img.shields.io/badge/-Tailwind-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white)
-![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+&nbsp;
 
-![Profile Views](https://hits.sh/github.com/YUST777.svg?label=Profile%20Views&color=0e75b6&extraCount=450)
+**Writing**
 
-## 🏆 Highlights
+- [ICPCHUE.com Update: 45 New Achievements](https://yust.dev/blog/icpchue-45-new-achievements-update) · Oct 30, 2026
+- [ICPC HUE Orientation Day: One Year of Our Community](https://yust.dev/blog/icpc-hue-orientation-day-season-2027) · Oct 26, 2026
+- [Finishing the ITI AI Track: 200+ Hours and 3 Certificates](https://yust.dev/blog/iti-ai-track-completed-three-certificates) · Oct 19, 2026
 
-- **3 national hackathon podiums** in Egypt — 2nd at GDG Delta, 3rd at LUXSAI, Sustainable Innovation Summit
-- **Verdict.run** — 500+ registered users, 100+ GitHub stars, 120k+ LinkedIn impressions from launch
-- **ICPC HUE** — co-founded the community; online judge with 650+ problems that helped prepare 8 teams for ECPC
+&nbsp;
 
-## 🚀 Featured Projects
+**Recently pushed**
 
-| Project | What it is | Stack |
-|---|---|---|
-| **[Verdict.run](https://verdict.run)** | All-in-one competitive programming IDE: Codeforces mirror, Monaco editor, whiteboard, custom judge | Next.js · TypeScript · PostgreSQL |
-| **[ICPC HUE](https://icpchue.com)** | Training platform & sandboxed online judge for Horus University | TypeScript · Online Judge |
-| **[HIET Control](https://hietm-control.vercel.app)** | Arabic exam-scheduling & proctor-allocation system for an engineering institute (72 staff, 273 courses, 24 halls) | React 19 · TypeScript · Tailwind v4 |
-| **[SWRMZ](https://swrmz.tech)** | Swarm of AI agents that find, prove and fix security vulnerabilities — with human approval for risky actions | TypeScript · AI Agents |
-| **[SAST](https://sast.tech)** | AI-assisted security scanning for web apps (2nd place, GDG Delta) | TypeScript · AI |
-| **[SpaceWorth](https://spaceworth.site)** | AI real-estate valuation (R² 0.9064) with CAD floor-plan analysis | Python · LightGBM · PyTorch · React |
+- [waddle](https://github.com/YUST777/waddle): Learn web development five minutes a day, with a duck. React + Supabase mobile app.
+- [icpchue](https://github.com/YUST777/icpchue): The beating heart of competitive programming at Horus University. A custom-built online judge, comprehensive training platform, and secure execution engine.
+- [bataa](https://github.com/YUST777/bataa): Bataa — a friendly app for building real web-development skills through short daily tasks
 
-More at **[yust.dev/projects](https://yust.dev/projects)**.
+&nbsp;
 
-## 📈 Activity
+**Find me**
 
-<img src="https://ghchart.rshah.org/0077b5/YUST777" alt="YUST777's GitHub Chart" />
+[yust.dev](https://yust.dev) · [LinkedIn](https://www.linkedin.com/in/yousefmsm1/) · [X](https://x.com/YUST777) · [Email](mailto:yousfmsm@hotmail.com)
 
-## 🤝 Connect
 
-[![Website](https://img.shields.io/badge/-yust.dev-000000?style=flat-square&logo=About.me&logoColor=white)](https://yust.dev)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yousefmsm1/)
-[![Telegram](https://img.shields.io/badge/-Telegram-0088CC?style=flat-square&logo=telegram&logoColor=white)](https://t.me/yousefmsm1)
+<sub>Generated by <code>scripts/gen_profile.mjs</code> and refreshed daily · 2026-11-18</sub>
