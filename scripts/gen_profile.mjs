@@ -1,6 +1,6 @@
 // Generates README.md and the header SVG cards in assets/cards from profile.config.json.
-// The README is images only: a header row (greeting + social icons) and one 2x2 projects GIF.
-// assets/projects.gif is cut from the project videos with ffmpeg and is not regenerated here.
+// The README is images only: a header row (greeting + social icons) and one projects showcase image.
+// assets/showcase.png is built by scripts/make_showcase.py and is not regenerated here.
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import satori from "satori";
 
@@ -80,6 +80,6 @@ const md = [
     link(cfg.site.url, img(header, `${cfg.greeting}. I'm ${cfg.fullName} (${cfg.name}), ${cfg.tagline}.`, 'width="83%"')) +
       cfg.social.map((s, i) => link(s.url, img(socialCards[i], s.label, 'width="8%"'))).join(""),
   ]),
-  ...block([link(cfg.projects.url, img(cfg.projects.gif, cfg.projects.alt))]),
+  ...block([link(cfg.projects.url, img(cfg.projects.image, cfg.projects.alt))]),
 ];
 writeFileSync("README.md", md.join("\n"));

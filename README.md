@@ -5,5 +5,5 @@
 </p>
 
 <p align="center">
-<a href="https://yust.dev"><img src="assets/projects.gif" width="100%" alt="Verdict, ICPCHUE, Waddle and SWRMZ in action" /></a>
+<a href="https://yust.dev"><img src="assets/showcase.png" width="100%" alt="SWRMZ, ICPCHUE and the Waddle mobile app" /></a>
 </p>
