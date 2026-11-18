@@ -4,6 +4,7 @@
 // assets/showcase.png is built by scripts/make_showcase.py and is not regenerated here.
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import satori from "satori";
+import * as icons from "simple-icons";
 
 const cfg = JSON.parse(readFileSync("profile.config.json", "utf8"));
 const token = process.env.GITHUB_TOKEN;
@@ -31,6 +32,23 @@ const [user, repos, commits, linkedin] = await Promise.all([
   safe("commits", async () => (await gh(`/search/commits?q=author:${cfg.user}&per_page=1`)).total_count, null),
   safe("linkedin", async () => (await getJson(cfg.site.followersApi)).followers, null),
 ]);
+// Contribution calendar needs a token (GraphQL); without one the card is skipped.
+const calendar = await safe(
+  "contributions",
+  async () => {
+    const res = await fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: { "user-agent": "profile-gen", authorization: `Bearer ${token}` },
+      body: JSON.stringify({
+        query: `{user(login:"${cfg.user}"){contributionsCollection{contributionCalendar{totalContributions weeks{contributionDays{contributionLevel}}}}}}`,
+      }),
+    });
+    const json = await res.json();
+    if (!json.data) throw new Error(JSON.stringify(json.errors ?? json));
+    return json.data.user.contributionsCollection.contributionCalendar;
+  },
+  null,
+);
 const stats = [
   ["COMMITS", commits],
   ["STARS", repos.reduce((n, r) => n + (r.stargazers_count || 0), 0)],
@@ -49,6 +67,8 @@ const fonts = [
   { name: "Silkscreen", data: font("silkscreen-700.ttf"), weight: 700 },
   { name: "Silkscreen", data: font("silkscreen-400.ttf"), weight: 400 },
   { name: "GeistMono", data: font("GeistMono-Regular.ttf"), weight: 400 },
+  { name: "Geist", data: font("Geist-Regular.ttf"), weight: 400 },
+  { name: "Geist", data: font("Geist-SemiBold.ttf"), weight: 600 },
 ];
 const el = (style, children = "") => ({ type: "div", props: { style: { display: "flex", ...style }, children } });
 const card = (style, children) =>
@@ -141,6 +161,82 @@ const hero = await draw(
   blink,
 );
 
+// Stack strip: monochrome logos only.
+const stack = await draw(
+  "stack",
+  1200,
+  120,
+  card({ alignItems: "center", justifyContent: "space-around", padding: "0 40px" }, [
+    ...cfg.stack.map((k) => ({
+      type: "img",
+      props: {
+        src: `data:image/svg+xml;base64,${Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${C.text}" d="${icons[k].path}"/></svg>`).toString("base64")}`,
+        width: 44,
+        height: 44,
+      },
+    })),
+  ]),
+);
+
+// Hackathon chips: one image per win so each links to its blog post. Widths must add to < 100% in one row.
+const MEDAL = { 1: ["#facc15", "1ST"], 2: ["#d4d4d8", "2ND"], 3: ["#cd7f32", "3RD"] };
+const hackCards = [];
+for (const [i, hk] of cfg.hackathons.entries()) {
+  const [color, label] = MEDAL[hk.place];
+  hackCards.push(
+    await draw(
+      `hackathon-${i}`,
+      400,
+      150,
+      card({ alignItems: "center", padding: "0 28px" }, [
+        el({ width: 64, height: 64, borderRadius: 999, border: `3px solid ${color}`, alignItems: "center", justifyContent: "center", marginRight: 22, flexShrink: 0 }, [
+          pixel(17, color, label),
+        ]),
+        el({ flexDirection: "column" }, [
+          el({ fontFamily: "Geist", fontWeight: 600, fontSize: 26, color: C.white }, hk.event),
+          el({ fontFamily: "Geist", fontSize: 18, color: C.text, marginTop: 6 }, `${hk.project} · ${hk.date}`),
+        ]),
+      ]),
+    ),
+  );
+}
+
+// Contribution heatmap in the site's blue instead of GitHub green.
+const LEVEL = { NONE: "#18181b", FIRST_QUARTILE: "#1e3a8a", SECOND_QUARTILE: "#2563eb", THIRD_QUARTILE: "#3b82f6", FOURTH_QUARTILE: "#93c5fd" };
+let contrib = null;
+if (calendar) {
+  const weeks = calendar.weeks.slice(-53);
+  const CELL = 17;
+  const GAPC = 3.6;
+  contrib = await draw(
+    "contributions",
+    1200,
+    260,
+    card({ flexDirection: "column", justifyContent: "center", padding: "0 52px" }, [
+      el({ justifyContent: "space-between", alignItems: "center", marginBottom: 22 }, [
+        el({ alignItems: "baseline" }, [
+          pixel(30, C.white, calendar.totalContributions.toLocaleString("en-US")),
+          mono(18, C.dim, "contributions in the last year", { marginLeft: 16 }),
+        ]),
+        el({ alignItems: "center" }, [
+          mono(15, C.dim, "less", { marginRight: 8 }),
+          ...Object.values(LEVEL).map((c) => el({ width: 13, height: 13, borderRadius: 3, background: c, marginRight: 4 })),
+          mono(15, C.dim, "more", { marginLeft: 4 }),
+        ]),
+      ]),
+      el(
+        { justifyContent: "space-between" },
+        weeks.map((w, wi) =>
+          el(
+            { flexDirection: "column", justifyContent: wi === 0 ? "flex-end" : "flex-start" },
+            w.contributionDays.map((d) => el({ width: CELL, height: CELL, borderRadius: 4, background: LEVEL[d.contributionLevel], marginBottom: GAPC })),
+          ),
+        ),
+      ),
+    ]),
+  );
+}
+
 // ---- readme ----
 const img = (src, alt, attrs = 'width="100%"') => `<img src="${src}" ${attrs} alt="${esc(alt)}" />`;
 const link = (href, inner) => `<a href="${href}">${inner}</a>`;
@@ -150,7 +246,14 @@ const md = [
   "<!-- Generated by scripts/gen_profile.mjs. Edit profile.config.json instead. -->",
   "",
   ...block([img(hero, `${cfg.fullName}, ${cfg.tagline}. ${stats.map(([l, n]) => `${fmt(n)} ${l.toLowerCase()}`).join(", ")}`)]),
+  ...block([img(stack, `Stack: ${cfg.stack.map((k) => icons[k].title).join(", ")}`)]),
   ...block([link(cfg.projects.url, img(cfg.projects.image, cfg.projects.alt))]),
+  ...block([
+    cfg.hackathons
+      .map((hk, i) => link(hk.url, img(hackCards[i], `${MEDAL[hk.place][1]} place at ${hk.event} with ${hk.project}, ${hk.date}`, 'width="33%"')))
+      .join(""),
+  ]),
+  ...(contrib ? block([img(contrib, `${calendar.totalContributions} contributions in the last year`)]) : []),
   // no whitespace between the header images, or the row wraps
   ...block([
     link(cfg.site.url, img(header, `${cfg.greeting}. Find me on LinkedIn and X.`, 'width="83%"')) +

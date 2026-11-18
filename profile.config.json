@@ -25,5 +25,37 @@
     "alt": "SWRMZ, ICPCHUE and the Waddle mobile app",
     "url": "https://yust.dev"
   },
-  "location": "Egypt"
+  "location": "Egypt",
+  "stack": [
+    "siNextdotjs",
+    "siTypescript",
+    "siReact",
+    "siNodedotjs",
+    "siPostgresql",
+    "siDocker",
+    "siPython"
+  ],
+  "hackathons": [
+    {
+      "place": 2,
+      "event": "GDG Delta",
+      "project": "Sast.tech",
+      "date": "Feb 2026",
+      "url": "https://yust.dev/blog/gdg-delta-hackathon-second-place-sast-tech"
+    },
+    {
+      "place": 3,
+      "event": "LuxsAI",
+      "project": "Sast.tech",
+      "date": "Mar 2026",
+      "url": "https://yust.dev/blog/luxsai-hackathon-third-place-sast-tech"
+    },
+    {
+      "place": 3,
+      "event": "Innovation Summit",
+      "project": "Zero Threat",
+      "date": "Aug 2025",
+      "url": "https://yust.dev/blog/zero-threat-egypt-innovation-summit"
+    }
+  ]
 }
