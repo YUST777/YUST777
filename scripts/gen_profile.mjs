@@ -33,7 +33,11 @@ async function linkedinFollowers() {
   try {
     const res = await fetch(cfg.linkedinUrl, { headers: { "user-agent": "Twitterbot/1.0", "accept-language": "en-US,en;q=0.9" } });
     const n = (await res.text()).match(/FollowAction"[^}]*?"userInteractionCount":(\d+)/)?.[1];
-    if (n) return Number(n);
+    if (n) {
+      // stats.json is what yust.dev's API reads (LinkedIn blocks Cloudflare, but not GitHub Actions).
+      writeFileSync("stats.json", JSON.stringify({ linkedinFollowers: Number(n), updatedAt: new Date().toISOString() }, null, 2) + "\n");
+      return Number(n);
+    }
     console.warn(`[linkedin] no count in public page (HTTP ${res.status}), using site API`);
   } catch (e) {
     console.warn(`[linkedin] public page failed: ${e.message}, using site API`);
