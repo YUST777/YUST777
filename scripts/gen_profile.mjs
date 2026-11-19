@@ -295,13 +295,13 @@ const md = [
   "",
   ...block([img(hero, `${cfg.fullName}, ${cfg.tagline}. ${stats.map(([l, n]) => `${fmt(n)} ${l.toLowerCase()}`).join(", ")}`)]),
   ...block([img(stack, `Stack: ${cfg.stack.map((k) => icons[k].title).join(", ")}`)]),
-  // Waddle (tall) floats right; SWRMZ and ICPCHUE stack on the left. GitHub pads align=right images by 20px,
-  // so widths sum to ~97% (fits an 830px README with that padding); 31.6% x 900/520 ~= 2 x 65.4% x 442/1064 keeps both columns the same height.
+  // Three equal-height cards in one row, no float and no whitespace between them, so they scale together
+  // at any width. Widths are the images' share of 536+536+520 px (gap baked into the first two).
   ...block([
-    link(cfg.projects[0].url, img(cfg.projects[0].image, cfg.projects[0].alt, 'width="31.6%" align="right"')),
-    link(cfg.projects[1].url, img(cfg.projects[1].image, cfg.projects[1].alt, 'width="65.4%"')) + "<br>",
-    link(cfg.projects[2].url, img(cfg.projects[2].image, cfg.projects[2].alt, 'width="65.4%"')),
-  ]).map((l) => (l === '<p align="center">' ? "<p>" : l)),
+    [cfg.projects[1], cfg.projects[2], cfg.projects[0]]
+      .map((p, i) => link(p.url, img(p.image, p.alt, `width="${["33.67%", "33.67%", "32.66%"][i]}"`)))
+      .join(""),
+  ]),
   ...block([
     link(
       `${cfg.site.url}/hacks`,
