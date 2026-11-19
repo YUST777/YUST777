@@ -27,26 +27,41 @@ const safe = async (label, fn, fallback) => {
 const fmt = (n) => (n == null ? "-" : n >= 10000 ? `${(n / 1000).toFixed(1)}k` : n.toLocaleString("en-US"));
 const host = (url) => url.replace(/^\w+:\/\/(www\.)?/, "").replace(/\/$/, "");
 
-const [user, repos, commits, linkedin] = await Promise.all([
+const [user, repos, linkedin] = await Promise.all([
   safe("user", () => gh(`/users/${cfg.user}`), {}),
   safe("repos", () => gh(`/users/${cfg.user}/repos?per_page=100`), []),
-  safe("commits", async () => (await gh(`/search/commits?q=author:${cfg.user}&per_page=1`)).total_count, null),
   safe("linkedin", async () => (await getJson(cfg.site.followersApi)).followers, null),
 ]);
 // Contribution calendar needs a token (GraphQL); without one the card is skipped.
+async function graphql(query) {
+  const res = await fetch("https://api.github.com/graphql", {
+    method: "POST",
+    headers: { "user-agent": "profile-gen", authorization: `Bearer ${token}` },
+    body: JSON.stringify({ query }),
+  });
+  const json = await res.json();
+  if (!json.data) throw new Error(JSON.stringify(json.errors ?? json));
+  return json.data.user.contributionsCollection;
+}
 const calendar = await safe(
   "contributions",
+  async () =>
+    (await graphql(`{user(login:"${cfg.user}"){contributionsCollection{contributionCalendar{totalContributions weeks{contributionDays{contributionLevel}}}}}}`))
+      .contributionCalendar,
+  null,
+);
+// All-time commits = GitHub's commit contributions summed per year. Unlike commit search, this counts
+// private repos and gives the same number with the built-in Actions token as with a personal one.
+const commits = await safe(
+  "commits",
   async () => {
-    const res = await fetch("https://api.github.com/graphql", {
-      method: "POST",
-      headers: { "user-agent": "profile-gen", authorization: `Bearer ${token}` },
-      body: JSON.stringify({
-        query: `{user(login:"${cfg.user}"){contributionsCollection{contributionCalendar{totalContributions weeks{contributionDays{contributionLevel}}}}}}`,
-      }),
-    });
-    const json = await res.json();
-    if (!json.data) throw new Error(JSON.stringify(json.errors ?? json));
-    return json.data.user.contributionsCollection.contributionCalendar;
+    const { contributionYears } = await graphql(`{user(login:"${cfg.user}"){contributionsCollection{contributionYears}}}`);
+    const years = await Promise.all(
+      contributionYears.map((y) =>
+        graphql(`{user(login:"${cfg.user}"){contributionsCollection(from:"${y}-01-01T00:00:00Z",to:"${y}-12-31T23:59:59Z"){totalCommitContributions}}}`),
+      ),
+    );
+    return years.reduce((n, c) => n + c.totalCommitContributions, 0);
   },
   null,
 );

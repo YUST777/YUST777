@@ -21,8 +21,7 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: node scripts/gen_profile.mjs
         env:
-          # PROFILE_TOKEN (read-only PAT) lets the commit count include private repos; the built-in token sees public only.
-          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
