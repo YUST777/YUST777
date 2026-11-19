@@ -27,10 +27,24 @@ const safe = async (label, fn, fallback) => {
 const fmt = (n) => (n == null ? "-" : n >= 10000 ? `${(n / 1000).toFixed(1)}k` : n.toLocaleString("en-US"));
 const host = (url) => url.replace(/^\w+:\/\/(www\.)?/, "").replace(/\/$/, "");
 
+// LinkedIn followers from the public profile page: served to link-preview bots with schema.org data
+// ("FollowAction" userInteractionCount), so no cookie or API key that can expire. Falls back to the yust.dev API.
+async function linkedinFollowers() {
+  try {
+    const res = await fetch(cfg.linkedinUrl, { headers: { "user-agent": "Twitterbot/1.0", "accept-language": "en-US,en;q=0.9" } });
+    const n = (await res.text()).match(/FollowAction"[^}]*?"userInteractionCount":(\d+)/)?.[1];
+    if (n) return Number(n);
+    console.warn(`[linkedin] no count in public page (HTTP ${res.status}), using site API`);
+  } catch (e) {
+    console.warn(`[linkedin] public page failed: ${e.message}, using site API`);
+  }
+  return (await getJson(cfg.site.followersApi)).followers;
+}
+
 const [user, repos, linkedin] = await Promise.all([
   safe("user", () => gh(`/users/${cfg.user}`), {}),
   safe("repos", () => gh(`/users/${cfg.user}/repos?per_page=100`), []),
-  safe("linkedin", async () => (await getJson(cfg.site.followersApi)).followers, null),
+  safe("linkedin", linkedinFollowers, null),
 ]);
 // Contribution calendar needs a token (GraphQL); without one the card is skipped.
 async function graphql(query) {
